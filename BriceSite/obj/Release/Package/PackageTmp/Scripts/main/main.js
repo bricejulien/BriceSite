@@ -88,7 +88,7 @@
     /* ---------------------------------------------------------------------- */
 
     /* niceScroll menu */
-    $("#header:not(.collapsed)").niceScroll({
+    /*$("#header:not(.collapsed)").niceScroll({
         touchbehavior: false,
         scrollspeed: 60,
         mousescrollstep: 38,
@@ -99,21 +99,34 @@
         horizrailenabled: false,
         cursorborderradius: '0px',
         cursorcolor: "#464646"
-    });
+    });*/
 
     /* niceScroll form contact */
-    $("#contentContact").niceScroll({
+    /*$("#contentContact").niceScroll({
         cursorcolor: '#428bca',
         cursorborder: '0px solid #fff',
         cursoropacitymax: '0.5',
         cursorborderradius: '0px',
         zindex: 99999999,
         cursorwidth: 7
-    });
+    });*/
 
 
     /* niceScroll layers*/
     $("#main section.layers .page_content").niceScroll({
+        touchbehavior: false,
+        scrollspeed: 60,
+        mousescrollstep: 38,
+        cursorwidth: 8,
+        cursorborder: 0,
+        autohidemode: false,
+        zindex: 99999999,
+        horizrailenabled: false,
+        cursorborderradius: 20,
+        cursorcolor: "#333"
+    });
+
+    $(".overlay_single_portfolio").niceScroll({
         touchbehavior: false,
         scrollspeed: 60,
         mousescrollstep: 38,

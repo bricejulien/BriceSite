@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
     <!-- CSS | simple-line-icons -->
     <!-- Credits: https://github.com/thesabbir/simple-line-icons -->
     <link rel="stylesheet" type="text/css" href="../CSS/simple-line-icons.css">
 
+    <!-- CSS | prettyPhoto -->
+    <!-- Credits: http://www.no-margin-for-errors.com/ -->
+    <link rel="stylesheet" type="text/css" href="../CSS/prettyPhoto.css" />
+
+
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/fontawesome")
+    <link rel="stylesheet" type="text/css" href="../Content/fontawesome/font-awesome.min.css">
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -48,9 +54,9 @@
                     <li class="portfolio">
                         <a href="#portfolio" class="portfolio link_menu"><i class="fa fa-camera-retro icon_menus"></i> <span class="nav-label">Portfolio</span></a>
                     </li>
-                    <li class="gallery">
+                    @*<li class="gallery">
                         <a href="#gallery" class="gallery link_menu"><i class="fa fa-camera-retro icon_menus"></i> <span class="nav-label">Gallery</span></a>
-                    </li>
+                    </li>*@
                     @*<li class="blog">
                         <a href="#blog" class="blog link_menu"><i class="fa fa-bullhorn icon_menu"></i> <span class="nav-label">Blog</span></a>
                     </li>*@
@@ -152,6 +158,10 @@
             var ahref = $(this).attr('href').split("#");
             var id_name = ahref[1];
             var ahrefhash = '#' + id_name;
+
+            // remove scrollbars everywhere
+            // create a new one for the opening section
+            //$("#ID").getNiceScroll().remove();
 
             $('nav.navigation ul.list-unstyled li').removeClass('active');
             $(this).closest('li').addClass('active');
