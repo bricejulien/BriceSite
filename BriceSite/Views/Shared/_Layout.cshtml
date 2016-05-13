@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Brice Julien</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <!-- CSS | simple-line-icons -->
+    <!-- Credits: https://github.com/thesabbir/simple-line-icons -->
+    <link rel="stylesheet" type="text/css" href="../CSS/simple-line-icons.css">
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fontawesome")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrappers">
+        <header id="header" tabindex="0" style="overflow-y: hidden; outline: none;">
+
+            <div class="menu_closed" id="menu_closed" title="" data-toggle="tooltip" data-original-title="Close Menu" style="display: none;">
+                <i class="fa fa-times"></i>
+            </div>
+
+            <div class="logo">
+                <a href="#"><img src="images/Brice.jpg" width="122" height="122" alt="Logo"></a>
+            </div>
+
+            <h4 class="tagline">
+                Web Developer <a href="http://www.thespider.com" target="_blank">@@Thespider</a>
+                <br />San Francisco, CA.
+            </h4>
+
+
+            <!-- .navigation -->
+            <nav class="navigation">
+                <ul class="list-unstyled">
+                    <li class="profile active">
+                        <a href="#profile" class="profile link_menu"><i class="fa fa-user icon_menus"></i><span class="nav-label">Profile</span></a>
+                    </li>
+                    @*<li class="service">
+                        <a href="#service" class="service link_menu"><i class="fa fa-cog icon_menus"></i> <span class="nav-label">Services</span></a>
+                    </li>*@
+                    <li class="resume">
+                        <a href="#resume" class="resume link_menu"><i class="fa fa-tasks icon_menus"></i> <span class="nav-label">Resume</span></a>
+                    </li>
+                    <li class="portfolio">
+                        <a href="#portfolio" class="portfolio link_menu"><i class="fa fa-camera-retro icon_menus"></i> <span class="nav-label">Portfolio</span></a>
+                    </li>
+                    <li class="gallery">
+                        <a href="#gallery" class="gallery link_menu"><i class="fa fa-camera-retro icon_menus"></i> <span class="nav-label">Gallery</span></a>
+                    </li>
+                    @*<li class="blog">
+                        <a href="#blog" class="blog link_menu"><i class="fa fa-bullhorn icon_menu"></i> <span class="nav-label">Blog</span></a>
+                    </li>*@
+                    @*<li class="contact">
+                        <a href="#contact" class="contact link_menu"><i class="fa fa-paper-plane icon_menus"></i> <span class="nav-label">Contact</span></a>
+                    </li>*@
+                    <li class="download-resume">
+                        <a href="../Uploads/CV.pdf" target="_blank" class="download-resume"><i class="fa fa-cloud-download icon_menu"></i> <span class="nav-label">Download CV</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End .navigation -->
+            <!-- #header_social_ul -->
+            <div class="social-ul" id="header_social_ul">
+                <ul>
+                    <li class="social-twitter"><a href="#" target="_blank" title="" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li class="social-facebook"><a href="#" target="_blank" title="" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li class="social-google"><a href="#" target="_blank" title="" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="social-linkedin"><a href="#" target="_blank" title="" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <!-- End #header_social_ul -->
+            <!-- .copyright -->
+            <div class="copyright">
+                <p style="margin-bottom:0;">© 2016. Brice Julien</p>
+            </div>
+            <!-- End.copyright -->
+
+        </header>
+        <div class="header-main">
+            <div class="content_wrappers">
+                <div class="logo_wrapper">
+
+                    <span class="site_title">
+                        <a href="" title="Brice Julien">
+                            @*<img src="images/logo-top.png" alt="FlexyBlog">*@
+                        </a>
+                    </span>
+
+                </div>
+
+                <a class="nav-btn menu_closed" id="btn_open_menu" href="#"><i class="fa fa-bars"></i></a>
+
+            </div>
+
+        </div>
+        <div id="main">
+            @RenderBody()
+            @RenderSection("SPAViews", required: false)
+
+            @*<div class="home-contact">
+                    <div class="col-md-12">
+                        <h2>CONTACT</h2>
+                        <ul>
+                            <li>12 Chemin de Font Sarade, 13500 Martigues, FR</li>
+                            <li>bricejulien27@gmail.com</li>
+                            <li>+33 (0)6 04 50 21 16</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Brice Julien</p>
+                </footer>*@
+        </div>
+    </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("Scripts", required: false)
+
+    <!-- Js | jquery.ui.effect.js -->
+    <!-- Credits: https://jqueryui.com/effect -->
+    <script type="text/javascript" src="../Scripts/main/jquery.ui.effect.min.js"></script>
+
+    <!-- Js | nicescroll.js -->
+    <!-- Credits: http://areaaperta.com/nicescroll -->
+    <script src="../Scripts/jquery.nicescroll.min.js"></script>
+
+    <!-- jquery | portfolio -->
+    <!-- Credits: http://www.mixitup.io -->
+    <script src="../Scripts/main/jquery.mixitup.min.js"></script>
+
+    <!-- jquery | prettyPhoto -->
+    <!-- Credits: http://www.no-margin-for-errors.com/ -->
+    <script type="text/javascript" src="../Scripts/main/jquery.prettyPhoto.js"></script>
+
+    <script src="../Scripts/main/main.js"></script>
+   
+    <script>
+        //jQuery(document).ready(function(){
+	    //    jQuery('.skillbar').each(function(){
+		//        jQuery(this).find('.skillbar-bar').animate({
+		//	        width:jQuery(this).attr('data-percent')
+		//        },6000);
+	    //    });
+        //});
+        $('.list-unstyled li a.link_menu').click(function () {
+
+            var ahref = $(this).attr('href').split("#");
+            var id_name = ahref[1];
+            var ahrefhash = '#' + id_name;
+
+            $('nav.navigation ul.list-unstyled li').removeClass('active');
+            $(this).closest('li').addClass('active');
+            $(".overlay_single_portfolio").css('display', 'none');
+            $(".overlay_single_portfolio div.single-portfolio").css('display', 'none');
+            $("#portfolio .page_content").show();
+
+            $("#main .layers").removeClass('page_current');
+            $(ahrefhash).addClass('page_current');
+
+            if (id_name == "resume") {
+                $('.skillbar').each(function () {
+                    $(this).find('.skillbar-bar').width(0);
+                });
+
+                $('.skillbar').each(function () {
+                    $(this).find('.skillbar-bar').animate({
+                        width: $(this).attr('data-percent')
+                    }, 2000);
+                });
+            }
+
+            return false;
+
+        });
+    </script>
+    <script>
+        $(".resume").click(function () {
+            $("#profile").fadeOut(300);
+            $("#resume").fadeIn(300);
+            $("#resume").addClass("page_current");
+            $("#profile").removeClass("page_current");
+            $(".profile").removeClass("active");
+            $(".resume").addClass("active");
+        })
+
+        $(".profile").click(function () {
+            $("#resume").fadeOut(300);
+            $("#profile").fadeIn(300);
+            $("#profile").addClass("page_current");
+            $("#resume").removeClass("page_current");
+            $(".resume").removeClass("active");
+            $(".profile").addClass("active");
+        })
+    </script>
+    <script>
+
+    </script>
+    <script>
+        /* ---------------------------------------------------------------------- */
+        /* ----------------------- tooltip icon social -------------------------- */
+        /* ---------------------------------------------------------------------- */
+
+        //tooltip social header
+        $('#header_social_ul li a').tooltip({
+            placement: "top"
+        });
+        //tooltip social prrofile
+        $('#profile_social_ul li a').tooltip({
+            placement: "top"
+        });
+        //tooltip social contact
+        $('#contact_social_ul li a').tooltip({
+            placement: "top"
+        });
+        //tooltip button toggle contact
+        $('#tabs').tooltip({
+            placement: "right"
+        });
+        //tooltip button toggle contact
+        $('#tabs_2').tooltip({
+            placement: "right"
+        });
+        //tooltip button close Menu
+        $('#menu_closed').tooltip({
+            placement: "right"
+        });
+    </script>
+</body>
+</html>
