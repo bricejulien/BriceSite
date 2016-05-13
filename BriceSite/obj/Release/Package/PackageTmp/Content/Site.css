@@ -330,6 +330,10 @@ textarea {
     -webkit-overflow-scrolling: touch;
 }
 
+#portfolio .page_content {
+    background-color: #191818;
+}
+
 /* IMAGE PROFILE */
 
 /*.my_profile .image_profile:hover {

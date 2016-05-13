@@ -271,6 +271,7 @@
     <Content Include="Content\fontawesome\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Site.css" />
+    <Content Include="CSS\animate.min.css" />
     <Content Include="CSS\prettyPhoto.css" />
     <Content Include="CSS\simple-line-icons.css" />
     <Content Include="favicon.ico" />
