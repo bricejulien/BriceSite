@@ -284,7 +284,17 @@
     <Content Include="Images\lapland.jpg" />
     <Content Include="Images\linkedin.png" />
     <Content Include="Images\mysignature.png" />
+    <Content Include="Images\Portfolio\ICT_Building.jpg" />
+    <Content Include="Images\Portfolio\Lapland.jpg" />
+    <Content Include="Images\Portfolio\Lapland2.jpg" />
+    <Content Include="Images\Portfolio\Las_Vegas.jpg" />
+    <Content Include="Images\Portfolio\Mono_Lake.jpg" />
+    <Content Include="Images\Portfolio\Naantali.jpg" />
+    <Content Include="Images\Portfolio\Santa_Cruz.jpg" />
     <Content Include="Images\Portfolio\SF_Skyline.jpg" />
+    <Content Include="Images\Portfolio\SF_Sunset.jpg" />
+    <Content Include="Images\Portfolio\St_Petersburg.jpg" />
+    <Content Include="Images\Portfolio\St_Petersburg2.jpg" />
     <Content Include="Images\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="Images\prettyPhoto\dark_rounded\btnPrevious.png" />
     <Content Include="Images\prettyPhoto\dark_rounded\contentPattern.png" />
