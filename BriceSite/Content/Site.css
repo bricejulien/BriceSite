@@ -7,6 +7,7 @@
 :root {
     /*--main-color: rgb(17, 63, 89);*/
     --main-color: #45ab48;
+    /*--main-color: rgb(17, 63, 89);*/
 }
 
 .my_profile .info_profile h2, .section-header h3, .service:hover .service-icon,
@@ -1046,6 +1047,12 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
 ===============================================
 */
 
+@media screen and (max-width: 1300px) {
+    .portfolios .grid div.view {
+        width: 50% !important;
+    }
+}
+
 @media screen and (max-width: 992px) {
     #header {
         visibility: hidden;
@@ -1067,11 +1074,11 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
         margin-top: 5%;
     }
 
-    .my_profile .image_profile{
+    .my_profile .image_profile {
         display: none !important;
     }
 
-    .my_profile .image_profile_resp{
+    .my_profile .image_profile_resp {
         display: block !important;
         background-color: #F0F8FF;
         margin-top: 10px;
@@ -1098,6 +1105,12 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
     #header {
         visibility: visible !important;
         display: block !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .portfolios .grid div.view {
+        width: 100% !important;
     }
 }
 
@@ -1131,17 +1144,9 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
         text-align: left;
         text-align: center;
     }
-
-    .portfolios .grid div.view, .gallery-3-col {
-        width: 50% !important;
-    }
 }
 
 @media screen and (max-width: 490px){
-
-    .portfolios .grid div.view, .gallery-3-col {
-        width: 100% !important;
-    }
 	.service-content {
 		margin-top: 50px;
 	}
