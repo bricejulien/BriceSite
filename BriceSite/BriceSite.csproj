@@ -275,6 +275,7 @@
     <Content Include="CSS\prettyPhoto.css" />
     <Content Include="CSS\simple-line-icons.css" />
     <Content Include="favicon.ico" />
+    <Content Include="favicon.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <Content Include="Global.asax" />
@@ -282,7 +283,6 @@
     <Content Include="Images\Brice.jpg" />
     <Content Include="Images\icons.png" />
     <Content Include="Images\lapland.jpg" />
-    <Content Include="Images\linkedin.png" />
     <Content Include="Images\mysignature.png" />
     <Content Include="Images\Portfolio\Amsterdam.JPG" />
     <Content Include="Images\Portfolio\Death_Valley.jpg" />
@@ -345,12 +345,10 @@
     <Content Include="Images\prettyPhoto\light_square\default_thumbnail.gif" />
     <Content Include="Images\prettyPhoto\light_square\loader.gif" />
     <Content Include="Images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Images\Profile.jpg" />
     <Content Include="Images\profile11.jpg" />
+    <Content Include="Images\Profile2.jpg" />
     <Content Include="Images\SF_Skyline.jpg" />
-    <Content Include="Images\signature.png" />
-    <Content Include="Images\signature2.png" />
-    <Content Include="Images\team11.jpg" />
-    <Content Include="Images\team22.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
