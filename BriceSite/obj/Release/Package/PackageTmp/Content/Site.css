@@ -419,8 +419,8 @@ textarea {
     float: right;
 }
 
-.my_profile .info_profile .inner-text ul li:hover a {
-    color: #333333;
+.my_profile .info_profile .inner-text ul li a:hover {
+    color: #fff;
 }
 
 /* SERVICE */
