@@ -13,6 +13,17 @@
         $('#custumize-style').fadeIn();
     });
 
+    /* languages */
+    $(".copyright span").click(function (e) {
+        e.preventDefault();
+
+        if ($(this).hasClass('inactive')) {
+            $(".copyright span").toggleClass("inactive");
+            $(".bg_desc, .bg_info, .col-lg-11.section_general, .navigation .list-unstyled, #genre-filter li.label_filter").toggleClass("language-inactive");
+        }
+
+    });
+
     /* ---------------------------------------------------------------------- */
     /* ------------------- opens the menu responsive ------------------------ */
     /* ---------------------------------------------------------------------- */
