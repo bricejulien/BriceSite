@@ -1,13 +1,20 @@
 ﻿jQuery(document).ready(function($) {
 
     "use strict";
+    var cookie = null;
 
     /* ---------------------------------------------------------------------- */
     /*	------------------------------- Loading ----------------------------- */
     /* ---------------------------------------------------------------------- */
 
     /*Page Preloading*/
-    $(window).load(function() {
+    $(window).load(function () {
+        // check if there is a cookie to set language to french or not
+        cookie = readCookie("language-BriceSite");
+        if (cookie == "french") {
+            $(".copyright span").toggleClass("inactive");
+            $(".bg_desc, .bg_info, .col-lg-11.section_general, .navigation .list-unstyled, #genre-filter li.label_filter").toggleClass("language-inactive");
+        }
         $('.preloader').fadeOut();
         $('.wrapper-content').css('opacity', '1').fadeIn();
         $('#custumize-style').fadeIn();
@@ -20,6 +27,14 @@
         if ($(this).hasClass('inactive')) {
             $(".copyright span").toggleClass("inactive");
             $(".bg_desc, .bg_info, .col-lg-11.section_general, .navigation .list-unstyled, #genre-filter li.label_filter").toggleClass("language-inactive");
+            cookie = readCookie("language-BriceSite");
+            if (cookie != "french") {
+                cookie = createCookie("language-BriceSite","french",1)
+            }
+            else {
+                eraseCookie("language-BriceSite");
+                cookie = null;
+            }
         }
 
     });
@@ -533,3 +548,32 @@
     //});
 
 }); // close
+
+
+function createCookie(name, value, days) {
+    var expires;
+
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = encodeURIComponent(name) + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name, "", -1);
+}
