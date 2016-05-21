@@ -1,0 +1,5 @@
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\bin\Debug\BricejModels.dll
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\bin\Debug\BricejModels.pdb
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.csprojResolveAssemblyReference.cache
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.dll
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.pdb

@@ -211,6 +211,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\ColorController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FontAwesomeBundleConfig.cs" />
@@ -246,6 +247,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Context\BricejContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -254,6 +256,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HomeViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeViewModels.cs" />
@@ -272,8 +275,39 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Site.css" />
     <Content Include="CSS\animate.min.css" />
+    <Content Include="CSS\colors\color_1.css" />
+    <Content Include="CSS\colors\color_19.css" />
+    <Content Include="CSS\colors\color_18.css" />
+    <Content Include="CSS\colors\color_17.css" />
+    <Content Include="CSS\colors\color_16.css" />
+    <Content Include="CSS\colors\color_15.css" />
+    <Content Include="CSS\colors\color_14.css" />
+    <Content Include="CSS\colors\color_13.css" />
+    <Content Include="CSS\colors\color_12.css" />
+    <Content Include="CSS\colors\color_11.css" />
+    <Content Include="CSS\colors\color_10.css" />
+    <Content Include="CSS\colors\Color_2.css" />
+    <Content Include="CSS\colors\color_30.css" />
+    <Content Include="CSS\colors\color_29.css" />
+    <Content Include="CSS\colors\color_28.css" />
+    <Content Include="CSS\colors\color_27.css" />
+    <Content Include="CSS\colors\color_26.css" />
+    <Content Include="CSS\colors\color_25.css" />
+    <Content Include="CSS\colors\color_24.css" />
+    <Content Include="CSS\colors\color_23.css" />
+    <Content Include="CSS\colors\color_22.css" />
+    <Content Include="CSS\colors\color_21.css" />
+    <Content Include="CSS\colors\color_20.css" />
+    <Content Include="CSS\colors\color_3.css" />
+    <Content Include="CSS\colors\Color_4.css" />
+    <Content Include="CSS\colors\Color_5.css" />
+    <Content Include="CSS\colors\Color_6.css" />
+    <Content Include="CSS\colors\Color_7.css" />
+    <Content Include="CSS\colors\Color_8.css" />
+    <Content Include="CSS\colors\Color_9.css" />
     <Content Include="CSS\prettyPhoto.css" />
     <Content Include="CSS\simple-line-icons.css" />
+    <Content Include="CSS\switcher.css" />
     <Content Include="favicon.ico" />
     <Content Include="favicon.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -397,9 +431,11 @@
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\knockout.validation.debug.js" />
     <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\main\jquery.cookie.js" />
     <Content Include="Scripts\main\jquery.mixitup.min.js" />
     <Content Include="Scripts\main\jquery.ui.effect.min.js" />
     <Content Include="Scripts\main\main.js" />
+    <Content Include="Scripts\main\switcher.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -461,6 +497,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BricejModels\BricejModels.csproj">
+      <Project>{54784b05-c0c2-451b-bebd-ef57472dafbc}</Project>
+      <Name>BricejModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

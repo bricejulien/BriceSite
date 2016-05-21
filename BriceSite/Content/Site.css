@@ -15,7 +15,7 @@
     .pricing-content li i, .text_content, #resume .col-md-6 span.duration, .attributes span.glyphicon,
     .attributes h6, .hobbies h6 i, .reference span strong {
     /*color: #113F59;*/
-    color: var(--main-color);
+    /*color: var(--main-color);*/
 }
 
 
@@ -194,7 +194,7 @@ textarea {
     width: 0%;
     height: 100%;
     left: 0px;
-    background: #113F59;
+    /*background: #113F59;*/
     /*background: var(--main-color);*/
     transition: all 0.3s ease-in-out;
 }
@@ -520,7 +520,7 @@ textarea {
     width: 50px;
     margin: 20px 0;
     /*background: #113F59;*/
-    background: var(--main-color);
+    /*background: var(--main-color);*/
 }
 
 .title-section {
@@ -647,7 +647,7 @@ textarea {
 
 .bg_info {
     color: #fff;
-    background: #113F59;
+    /*background: #113F59;*/
     /*background: var(--main-color);*/
 }
 
@@ -730,6 +730,7 @@ textarea {
     /*color: #444;*/
     color: white;
     font-weight: bold;
+    border-bottom: none !important;
 }
 
 #resume .col-md-6 span.duration {
@@ -785,7 +786,7 @@ textarea {
 
 .skillbar-title, .skillbar-bar {
     /*background: rgba(17, 63, 89, 0.8);*/
-    background: var(--main-color);
+    /*background: var(--main-color);*/
 }
 
 .skillbar-title span {
@@ -959,7 +960,7 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
 }
 
 .qualities ul li i {
-    color: var(--main-color);
+    /*color: var(--main-color);*/
 }
 
 
@@ -1063,7 +1064,7 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
 }
 
 @media screen and (max-width: 992px) {
-    #header {
+    #header, #custumize-style {
         visibility: hidden;
     }
 
@@ -1201,7 +1202,7 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
     .pricing-content li i, .text_content, #resume .col-md-6 span.duration, .attributes span.glyphicon,
     .attributes h6, .hobbies h6 i, .reference span strong {
         /*color: #45ab48;*/
-        color: #4e89a4;
+        /*color: #4e89a4;*/
     }
     .bg_info {
         /*background-color: #45ab48;*/
@@ -1209,51 +1210,51 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
     }
     .navigation > ul > li::before {
         /*background-color: #45ab48;*/
-        background-color: #113F59;
+        /*background-color: #113F59;*/
     }
     .portfolios .view a.info:hover {
         /*background-color: #45ab48;*/
-        background-color: #113F59;
+        /*background-color: #113F59;*/
     }
     #genre-filter li:hover span,
     #genre-filter li span.active {
         /*background-color: #45ab48;*/
-        background-color: #113F59;
+        /*background-color: #113F59;*/
     }
     .fc-page-title-breadcrumbs {
         /*background-color: #45ab48;*/
-        background-color: #4e89a4;
+        /*background-color: #4e89a4;*/
     }
     .title-section .sep2 {
         /*background: #45ab48;*/
-        background: #4e89a4;
+        /*background: #4e89a4;*/
     }
     .skillbar-title, .skillbar-bar {
         /*background: #45ab48;*/
-        background: #4e89a4;
+        /*background: #4e89a4;*/
     }
     .home-details .social li:hover a, .service:hover .general-link, a.download:hover {
         /*border: 1px solid #45ab48;*/
-        border: 1px solid #4e89a4;
+        /*border: 1px solid #4e89a4;*/
         /*background: #45ab48;*/
-        background: #4e89a4;
+        /*background: #4e89a4;*/
     }
     a.download {
         /*border: 1px solid #45ab48;*/
-        border: 1px solid #4e89a4;
+        /*border: 1px solid #4e89a4;*/
     }
     .services-box-icon i, .panel-default>.panel-heading, .btn-u, .pricing-head h3, .title_content:after, .icon_content, a.download, #header #menu_closed {
         /*background: #45ab48;*/
-        background: #4e89a4;
+        /*background: #4e89a4;*/
     }
 
     a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerpadding ul.info_contact li a:hover, .single-portfolio .content .portfolio-sidebar div a:hover, .home-details span.span_color, .service-content h3, .service:hover .service-title a, a.download:hover, .blog-content-grid article h3.post-title a:hover, .blog-content-grid article .footer_post ul li:hover a, .blog-content-grid article .footer_post ul li:hover i {
         /*color: #45ab48;*/
-        color: #4e89a4;
+        /*color: #4e89a4;*/
     }
     .qualities ul li i {
         /*color: #45ab48;*/
-        color: #4e89a4;
+        /*color: #4e89a4;*/
     }
 }
 
@@ -1499,8 +1500,8 @@ div.ppt {
 .portfolios .view h4 {
     font-weight: bold;
     color: #fff;
-    /*margin: 0px 0 5px;*/
-    margin: 40px 0 5px;
+    margin: 0px 0 5px;
+    /*margin: 40px 0 5px;*/
     text-align: center;
     position: relative;
     display: inline-block;
@@ -1550,7 +1551,7 @@ div.ppt {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    background-color: #113F59;
+    /*background-color: #113F59;*/
     color: #fff;
 }
 
@@ -1729,7 +1730,7 @@ div.ppt {
 #genre-filter li span.active {
     color: #fff;
     /*background-color: var(--main-color);*/
-    background-color: #113F59;
+    /*background-color: #113F59;*/
 }
 
 #genre-filter li.label_filter {
@@ -1762,7 +1763,7 @@ div.ppt {
 /* single portfolio */
 
 .fc-page-title-breadcrumbs {
-    background-color: var(--main-color);
+    /*background-color: var(--main-color);*/
 }
 
 .single-portfolio .fc-page-title-breadcrumbs {
@@ -1990,3 +1991,6 @@ hr.separate_port {
 .pp_expand {
     display: none !important;
 }
+
+/* COLORS */
+#custumize-style{display:none;}

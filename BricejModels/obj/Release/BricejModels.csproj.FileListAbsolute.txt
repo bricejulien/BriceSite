@@ -1,0 +1,4 @@
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\bin\Release\BricejModels.dll
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\bin\Release\BricejModels.pdb
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\obj\Release\BricejModels.dll
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BricejModels\obj\Release\BricejModels.pdb

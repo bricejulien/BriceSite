@@ -1,4 +1,6 @@
-﻿<section id="profile" class="layers page_current">
+﻿@model BriceSite.Models.HomeViewModels
+
+<section id="profile" class="layers page_current">
     <h2 style="display: none">profile</h2>
     <!-- page content -->
     <div class="page_content" tabindex="2" style="overflow-y: hidden; outline: none;">
@@ -13,108 +15,199 @@
                         <img src="../Images/Profile2.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6 no-padd info_profile">
+                @if (Model.Profiles.Count() > 0)
+                {
+                    var profile = Model.Profiles.First();
+                    <div class="col-xs-12 col-md-6 no-padd info_profile">
 
-                    <!-- .bg_desc -->
-                    <div class="bg_desc clearfix">
-                        <div class="inner-text">
-                            <h2> <span class="not-bold">I'm</span> Brice Julien</h2>
-                            <small class="myjob">web developer</small>
+                        <!-- .bg_desc -->
+                        <div class="bg_desc clearfix">
+                            <div class="inner-text">
+                                <h2> <span class="not-bold">@Html.Raw(profile.Title)</h2>
+                                <small class="myjob">@profile.Subtitle</small>
 
-                            <div class="feature-desc">
-                                <p id="hidden_aboutMe">
-                                    <span class="dates"><strong>Welcome to my personal website !</strong><br><br></span>
-                                    Here you will find different information about me, such as my professional and personal experiences,
-                                    my studies, but also my interests.<br><br>
-                                    I am a student in my last year of a three-year graduate course in engineering at <strong><a href="http://www.esigelec.fr/en" target="_blank">ESIGELEC</a></strong> in Normandy, France.<br>
-                                    <br>I was lucky to take part in the Erasmus+ experience for the autumn semester in 2015 at <strong><a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi University</a></strong> in <strong>Finland</strong>, to follow courses in « Software Engineering ».<br>
-                                    <br>I am currently working as an intern at <strong><a href="http://thespider.com/" target="_blank">TheSpider</a></strong>, a company based in a place I have always wanted to be :<strong> San Francisco</strong> at the heart of the Silicon Valley.
-                                </p>
-                            </div>
+                                <div class="feature-desc">
+                                    <p id="hidden_aboutMe">
+                                        @Html.Raw(profile.Description)
+                                    </p>
+                                </div>
 
-                            <div class="signature text-right">
-                                <div class="inner">
-                                    <img height="40" src="~/Images/mysignature.png" alt="Signature">
-                                    <cite class="name">Brice Julien</cite>
+                                <div class="signature text-right">
+                                    <div class="inner">
+                                        <img height="40" src="~/Images/mysignature.png" alt="Signature">
+                                        <cite class="name">Brice Julien</cite>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- End .bg_desc -->
-                    <!-- .bg_desc french -->
-                    <div class="bg_desc clearfix language-inactive">
-                        <div class="inner-text">
-                            <h2> <span class="not-bold">Je suis</span> Brice Julien</h2>
-                            <small class="myjob">web developer</small>
+                        <!-- End .bg_desc -->
+                        <!-- .bg_desc french -->
+                        <div class="bg_desc clearfix language-inactive">
+                            <div class="inner-text">
+                                <h2> <span class="not-bold">@Html.Raw(profile.TitleFrench)</h2>
+                                <small class="myjob">@profile.SubtitleFrench</small>
 
-                            <div class="feature-desc">
-                                <p id="hidden_aboutMe">
-                                    <span class="dates"><strong>Bienvenue sur mon site Web personnel !</strong><br><br></span>
-                                    Vous trouverez ici différentes informations me concernant, telles que mes expériences personnelles et
-                                    professionnelles, mes études, ou encore mes centres d'intérêt.<br><br>
-                                    Je suis étudiant en dernière année de cycle ingénieur à <strong>
-                                    <a href="http://www.esigelec.fr"target="_blank">l'ESIGELEC</a></strong> de Rouen en Normandie.<br>
-                                    <br>Après avoir effectué le premier semestre à l'université
-                                    <strong><a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi</a></strong> en <strong>Finland</strong>,
-                                    pour y suivre les cours en « Software Engineering », j'ai la chance de conclure cette dernier année d'études par un stage
-                                    chez <strong><a href="http://thespider.com/" target="_blank">TheSpider</a></strong>,
-                                    une entreprise à taille humaine située au cœur de la Silicon Valley à<strong> San Francisco</strong>.
-                                </p>
-                            </div>
+                                <div class="feature-desc">
+                                    <p id="hidden_aboutMe">
+                                        @Html.Raw(profile.DescriptionFrench)
+                                    </p>
+                                </div>
 
-                            <div class="signature text-right">
-                                <div class="inner">
-                                    <img height="40" src="~/Images/mysignature.png" alt="Signature">
-                                    <cite class="name">Brice Julien</cite>
+                                <div class="signature text-right">
+                                    <div class="inner">
+                                        <img height="40" src="~/Images/mysignature.png" alt="Signature">
+                                        <cite class="name">Brice Julien</cite>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- End .bg_desc french -->
-
-
-                    <!-- .bg_info -->
-                    <div class="bg_info clearfix">
-                        <div class="inner-text">
+                        <!-- End .bg_desc french -->
+                        <!-- .bg_info -->
+                        <div class="bg_info clearfix">
+                            <div class="inner-text">
+                                <ul>
+                                    <li class="user_name"><strong><i class="fa fa-user"></i>Name</strong> Brice Julien</li>
+                                    <li><strong><i class="fa fa-calendar"></i>Birthdate</strong> @profile.Birthdate</li>
+                                    <li><strong><i class="fa fa-phone"></i>Phone</strong> @profile.Phone</li>
+                                    <li><strong><i class="fa fa-skype"></i>Skype</strong> @profile.Skype</li>
+                                    <li><strong><i class="fa fa-envelope"></i>Email</strong> <a href="mailto:@profile.Email">@profile.Email</a></li>
+                                    <li><strong><i class="fa fa-globe"></i>Website</strong> @profile.Website</li>
+                                    <li><strong><i class="glyphicon glyphicon-map-marker"></i>Address</strong> @profile.Address.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End .bg_info -->
+                        <!-- .bg_info french -->
+                        <div class="bg_info clearfix language-inactive">
+                            <div class="inner-text">
+                                <ul>
+                                    <li class="user_name"><strong><i class="fa fa-user"></i>Nom</strong> @profile.Name</li>
+                                    <li><strong><i class="fa fa-calendar"></i>Naissance</strong> @profile.BirthdateFrench</li>
+                                    <li><strong><i class="fa fa-phone"></i>Téléphone</strong> @profile.Phone</li>
+                                    <li><strong><i class="fa fa-skype"></i>Skype</strong> @profile.Skype</li>
+                                    <li><strong><i class="fa fa-envelope"></i>Email</strong> <a href="mailto:@profile.Email">@profile.Email</a></li>
+                                    <li><strong><i class="fa fa-globe"></i>Site Web</strong> @profile.Website</li>
+                                    <li><strong><i class="glyphicon glyphicon-map-marker"></i>Adresse</strong> @profile.Address.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End .bg_info french -->
+                        <!-- .header_social_ul -->
+                        <div class="social-ul bg_social" id="profile_social_ul">
                             <ul>
-                                <li class="user_name"><strong><i class="fa fa-user"></i>Name</strong> Brice Julien</li>
-                                <li><strong><i class="fa fa-calendar"></i>Birthdate</strong> January 3, 1994</li>
-                                <li><strong><i class="fa fa-phone"></i>Phone</strong> +33 (0) 6 04 50 21 16</li>
-                                <li><strong><i class="fa fa-skype"></i>Skype</strong> br.julien</li>
-                                <li><strong><i class="fa fa-envelope"></i>Email</strong> <a href="mailto:bricejulien27@gmail.com">bricejulien27@gmail.com</a></li>
-                                <li><strong><i class="fa fa-globe"></i>Website</strong> bricej.azurewebsites.net</li>
-                                <li><strong><i class="glyphicon glyphicon-map-marker"></i>Address</strong> 2379, 42nd Avenue, San Francisco, CA 94116.</li>
+                                <li class="social-twitter"><a href="@profile.LinkTwitter" title="" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-facebook"><a href="@profile.LinkFacebook" target="_blank" title="" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-google"><a href="@profile.LinkGoogle" title="" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                                <li class="social-linkedin"><a href="@profile.LinkLinkedIn" title="" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
+                        <!-- End .header_social_ul -->
                     </div>
-                    <!-- End .bg_info -->
-                    <!-- .bg_info french -->
-                    <div class="bg_info clearfix language-inactive">
-                        <div class="inner-text">
+                }
+                else
+                {
+                    <div class="col-xs-12 col-md-6 no-padd info_profile">
+
+                        <!-- .bg_desc -->
+                        <div class="bg_desc clearfix">
+                            <div class="inner-text">
+                                <h2> <span class="not-bold">I'm</span> Brice Julien</h2>
+                                <small class="myjob">web developer</small>
+
+                                <div class="feature-desc">
+                                    <p id="hidden_aboutMe">
+                                        <span class="dates"><strong>Welcome to my personal website !</strong><br><br></span>
+                                        Here you will find different information about me, such as my professional and personal experiences,
+                                        my studies, but also my interests.<br><br>
+                                        I am a student in my last year of a three-year graduate course in engineering at <strong><a href="http://www.esigelec.fr/en" target="_blank">ESIGELEC</a></strong> in Normandy, France.<br>
+                                        <br>I was lucky to take part in the Erasmus+ experience for the autumn semester in 2015 at <strong><a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi University</a></strong> in <strong>Finland</strong>, to follow courses in « Software Engineering ».<br>
+                                        <br>I am currently working as an intern at <strong><a href="http://thespider.com/" target="_blank">TheSpider</a></strong>, a company based in a place I have always wanted to be :<strong> San Francisco</strong> at the heart of the Silicon Valley.
+                                    </p>
+                                </div>
+
+                                <div class="signature text-right">
+                                    <div class="inner">
+                                        <img height="40" src="~/Images/mysignature.png" alt="Signature">
+                                        <cite class="name">Brice Julien</cite>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End .bg_desc -->
+                        <!-- .bg_desc french -->
+                        <div class="bg_desc clearfix language-inactive">
+                            <div class="inner-text">
+                                <h2> <span class="not-bold">Je suis</span> Brice Julien</h2>
+                                <small class="myjob">web developer</small>
+
+                                <div class="feature-desc">
+                                    <p id="hidden_aboutMe">
+                                        <span class="dates"><strong>Bienvenue sur mon site Web personnel !</strong><br><br></span>
+                                        Vous trouverez ici différentes informations me concernant, telles que mes expériences personnelles et
+                                        professionnelles, mes études, ou encore mes centres d'intérêt.<br><br>
+                                        Je suis étudiant en dernière année de cycle ingénieur à <strong>
+                                            <a href="http://www.esigelec.fr" target="_blank">l'ESIGELEC</a>
+                                        </strong> de Rouen en Normandie.<br>
+                                        <br>Après avoir effectué le premier semestre à l'université
+                                        <strong><a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi</a></strong> en <strong>Finland</strong>,
+                                        pour y suivre les cours en « Software Engineering », j'ai la chance de conclure cette dernier année d'études par un stage
+                                        chez <strong><a href="http://thespider.com/" target="_blank">TheSpider</a></strong>,
+                                        une entreprise à taille humaine située au cœur de la Silicon Valley à<strong> San Francisco</strong>.
+                                    </p>
+                                </div>
+
+                                <div class="signature text-right">
+                                    <div class="inner">
+                                        <img height="40" src="~/Images/mysignature.png" alt="Signature">
+                                        <cite class="name">Brice Julien</cite>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End .bg_desc french -->
+                        <!-- .bg_info -->
+                        <div class="bg_info clearfix">
+                            <div class="inner-text">
+                                <ul>
+                                    <li class="user_name"><strong><i class="fa fa-user"></i>Name</strong> Brice Julien</li>
+                                    <li><strong><i class="fa fa-calendar"></i>Birthdate</strong> January 3, 1994</li>
+                                    <li><strong><i class="fa fa-phone"></i>Phone</strong> +33 (0) 6 04 50 21 16</li>
+                                    <li><strong><i class="fa fa-skype"></i>Skype</strong> br.julien</li>
+                                    <li><strong><i class="fa fa-envelope"></i>Email</strong> <a href="mailto:bricejulien27@gmail.com">bricejulien27@gmail.com</a></li>
+                                    <li><strong><i class="fa fa-globe"></i>Website</strong> bricej.azurewebsites.net</li>
+                                    <li><strong><i class="glyphicon glyphicon-map-marker"></i>Address</strong> 2379, 42nd Avenue, San Francisco, CA 94116.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End .bg_info -->
+                        <!-- .bg_info french -->
+                        <div class="bg_info clearfix language-inactive">
+                            <div class="inner-text">
+                                <ul>
+                                    <li class="user_name"><strong><i class="fa fa-user"></i>Nom</strong> Brice Julien</li>
+                                    <li><strong><i class="fa fa-calendar"></i>Naissance</strong> 3 Janvier 1994</li>
+                                    <li><strong><i class="fa fa-phone"></i>Téléphone</strong> +33 (0) 6 04 50 21 16</li>
+                                    <li><strong><i class="fa fa-skype"></i>Skype</strong> br.julien</li>
+                                    <li><strong><i class="fa fa-envelope"></i>Email</strong> <a href="mailto:bricejulien27@gmail.com">bricejulien27@gmail.com</a></li>
+                                    <li><strong><i class="fa fa-globe"></i>Site Web</strong> bricej.azurewebsites.net</li>
+                                    <li><strong><i class="glyphicon glyphicon-map-marker"></i>Adresse</strong> 2379, 42nd Avenue, San Francisco, CA 94116.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End .bg_info french -->
+                        <!-- .header_social_ul -->
+                        <div class="social-ul bg_social" id="profile_social_ul">
                             <ul>
-                                <li class="user_name"><strong><i class="fa fa-user"></i>Nom</strong> Brice Julien</li>
-                                <li><strong><i class="fa fa-calendar"></i>Naissance</strong> 3 Janvier 1994</li>
-                                <li><strong><i class="fa fa-phone"></i>Téléphone</strong> +33 (0) 6 04 50 21 16</li>
-                                <li><strong><i class="fa fa-skype"></i>Skype</strong> br.julien</li>
-                                <li><strong><i class="fa fa-envelope"></i>Email</strong> <a href="mailto:bricejulien27@gmail.com">bricejulien27@gmail.com</a></li>
-                                <li><strong><i class="fa fa-globe"></i>Site Web</strong> bricej.azurewebsites.net</li>
-                                <li><strong><i class="glyphicon glyphicon-map-marker"></i>Adresse</strong> 2379, 42nd Avenue, San Francisco, CA 94116.</li>
+                                <li class="social-twitter"><a href="#" title="" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-facebook"><a href="https://www.facebook.com/brice.julien.3" target="_blank" title="" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-google"><a href="#" title="" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                                <li class="social-linkedin"><a href="#" title="" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
+                        <!-- End .header_social_ul -->
                     </div>
-                    <!-- End .bg_info french -->
-
-                    <!-- .header_social_ul -->
-                    <div class="social-ul bg_social" id="profile_social_ul">
-                        <ul>
-                            <li class="social-twitter"><a href="#" title="" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li class="social-facebook"><a href="https://www.facebook.com/brice.julien.3" target="_blank" title="" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li class="social-google"><a href="#" title="" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="social-linkedin"><a href="#" title="" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- End .header_social_ul -->
-                </div>
+                }
+                
             </div>
         </div>
     </div>
@@ -140,90 +233,175 @@
                         <!-- .resume-left -->
                         <div class="col-md-6 resume-left">
 
-                            <div class="title-section">
-                                <h2 class="section_title">Experience</h2>
-                                <div class="sep2"></div>
-                            </div>
+                            <!-- from database -->
+                            @if (Model.Experiences.Any())
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Experiences</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            <!-- .attributes -->
-                            <ul class="attributes">
-                                <li class="first">
-                                    <h5>Web Development Internship <span class="duration"><i class="fa fa-calendar color"></i> Feb. 2016 - Today</span></h5>
-                                    <h6><span class="fa fa-briefcase"></span> <a href="http://www.thespider.com" target="_blank">THESPIDER - San Francisco, CA</a></h6>
-                                    <p>I am taking part in every step in the development of high end web applications after the design has been created.<br>
-		 	                            From client side coding to back end architecture, I am guided and asked to learn and solve real business problems using code.
-			                            Technologies : C#, JavaScript, angular.js, grunt, git, bower, sql, sql server, azure.
-                                        MVC architecture.
-                                    </p>
-                                </li>
-                                <li>
-                                    <h5>VB.NET Development Internship <span class="duration"><i class="fa fa-calendar color"></i> Summer 2015</span></h5>
-                                    <h6><span class="fa fa-briefcase"></span> <a href="http://en.dcnsgroup.com" target="_blank">DCNS - Toulon, FRANCE</a></h6>
-                                    <p>Software developed in VB.NET to archive machining sequences and to access them more easily.</p>
-                                </li>
-                                <li>
-                                    <h5>Seasonal Work <span class="duration"><i class="fa fa-calendar color"></i> Summer 2013</span></h5>
-                                    <h6><span class="fa fa-briefcase"></span> <a href="http://www.kemone.com" target="_blank">KEM ONE - Lavéra, FRANCE</a></h6>
-                                    <p>2-months placement with the technical service and maintenance technicians.</p>
-                                </li>
-                            </ul>
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    @foreach (var experience in Model.Experiences)
+                                    {
+                                        <li>
+                                            <h5>@experience.Title <span class="duration"><i class="fa fa-calendar color"></i> @experience.Dates</span></h5>
+                                            <h6><span class="fa fa-book"></span> <a href="@experience.Link" target="_blank">@experience.Company</a></h6>
+                                            @Html.Raw(experience.Description)
+                                        </li>
+                                    }
+                                </ul>
                             <!-- /.attributes -->
+                            }
+                            else
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Experiences</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            <div class="title-section">
-                                <h2 class="section_title">Education</h2>
-                                <div class="sep2"></div>
-                            </div>
 
-                            <!-- .attributes -->
-                            <ul class="attributes">
-                                <li class="first">
-                                    <h5>Exchange Semester <span class="duration"><i class="fa fa-calendar color"></i> Fall 2015</span></h5>
-                                    <h6><span class="fa fa-book"></span> <a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi University (Turku, Finland)</a></h6>
-                                       <p>Development of web applications and web services |
-                                        Introduction to Many-Core Programming |
-                                        Specification Methods |
-                                        Software Testing |
-                                        Introduction to Game Development Tools |
-                                        Finnish as a Foreign Language, level 1</p>
-                                </li>
-                                <li>
-                                    <h5>Master of Engineering <span class="duration"><i class="fa fa-calendar color"></i> 2011 - 2016</span></h5>
-                                    <h6><span class="fa fa-book"></span> <a href="http://www.esigelec.fr/en" target="_blank"> ESIGELEC (Normandy, France)</a></h6>
-                                    <p>3-year Master’s Degree course (Graduation June 2016)<br>
-		 	                            Specializing in « Information Systems Engineering »</p>
-                                </li>
-                            </ul>
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    <li class="first">
+                                        <h5>Web Development Internship <span class="duration"><i class="fa fa-calendar color"></i> Feb. 2016 - Today</span></h5>
+                                        <h6><span class="fa fa-briefcase"></span> <a href="http://www.thespider.com" target="_blank">THESPIDER - San Francisco, CA</a></h6>
+                                        <p>
+                                            I am taking part in every step in the development of high end web applications after the design has been created.<br>
+                                            From client side coding to back end architecture, I am guided and asked to learn and solve real business problems using code.
+                                            Technologies : C#, JavaScript, angular.js, grunt, git, bower, sql, sql server, azure.
+                                            MVC architecture.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>VB.NET Development Internship <span class="duration"><i class="fa fa-calendar color"></i> Summer 2015</span></h5>
+                                        <h6><span class="fa fa-briefcase"></span> <a href="http://en.dcnsgroup.com" target="_blank">DCNS - Toulon, FRANCE</a></h6>
+                                        <p>Software developed in VB.NET to archive machining sequences and to access them more easily.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Seasonal Work <span class="duration"><i class="fa fa-calendar color"></i> Summer 2013</span></h5>
+                                        <h6><span class="fa fa-briefcase"></span> <a href="http://www.kemone.com" target="_blank">KEM ONE - Lavéra, FRANCE</a></h6>
+                                        <p>2-months placement with the technical service and maintenance technicians.</p>
+                                    </li>
+                                </ul>
+                                <!-- /.attributes -->
+                            }
+
+                            <!-- from database -->
+                            @if (Model.Educations.Any())
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Education</h2>
+                                    <div class="sep2"></div>
+                                </div>
+
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    @foreach (var education in Model.Educations)
+                                    {
+                                        <li>
+                                            <h5>@education.Title <span class="duration"><i class="fa fa-calendar color"></i> @education.Dates</span></h5>
+                                            <h6><span class="fa fa-book"></span> <a href="@education.Link" target="_blank"> @education.School</a></h6>
+                                            @Html.Raw(education.Description)
+                                        </li>
+                                    }
+                                </ul>
                             <!-- /.attributes -->
+                            }
+                            else {
+                                <div class="title-section">
+                                    <h2 class="section_title">Education</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            <div class="title-section">
-                                <h2 class="section_title">Projects</h2>
-                                <div class="sep2"></div>
-                            </div>
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    <li class="first">
+                                        <h5>Exchange Semester <span class="duration"><i class="fa fa-calendar color"></i> Fall 2015</span></h5>
+                                        <h6><span class="fa fa-book"></span> <a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi University (Turku, Finland)</a></h6>
+                                        <p>
+                                            Development of web applications and web services |
+                                            Introduction to Many-Core Programming |
+                                            Specification Methods |
+                                            Software Testing |
+                                            Introduction to Game Development Tools |
+                                            Finnish as a Foreign Language, level 1
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>Master of Engineering <span class="duration"><i class="fa fa-calendar color"></i> 2011 - 2016</span></h5>
+                                        <h6><span class="fa fa-book"></span> <a href="http://www.esigelec.fr/en" target="_blank"> ESIGELEC (Normandy, France)</a></h6>
+                                        <p>
+                                            3-year Master’s Degree course (Graduation June 2016)<br>
+                                            Specializing in « Information Systems Engineering »
+                                        </p>
+                                    </li>
+                                </ul>
+                                <!-- /.attributes -->
+                            }
 
-                            <!-- .attributes -->
-                            <ul class="attributes">
-                                <li class="first">
-                                    <h5>JAVA EE Programming <span class="duration"><i class="fa fa-calendar color"></i> 2015</span></h5>
-                                    <p>Web application to propose exercices in JAVA to students. The application compile and execute their
-                                    program. If an error occurs, messages are displayed.
-                                    Else unit tests are made to validate or not the program.</p>
-                                </li>
-                                <li>
-                                    <h5>Engineering Project @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
-                                    <p>Development of an Android application to rent equipment.</p>
-                                </li>
-                                <li>
-                                    <h5>Python Programming @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
-                                    <p>Web applications &amp; Web services to create and participate in auctions.</p>
-                                </li>
-                                <li>
-                                    <h5>Web Conception <span class="duration"><i class="fa fa-calendar color"></i> 2014</span></h5>
-                                    <p>Website facilitating the management of the projects of the IRSEEM
-                                    (Technology Research Institute of ESIGELEC).</p>
-                                </li>
+                            <!-- from database -->
+                            @if (Model.Projects.Any())
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Projects</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            </ul>
-                            <!-- /.attributes -->
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    @foreach (var project in Model.Projects)
+                                    {
+                                        <li>
+                                            <h5>@project.Title 
+                                                @if (@project.Dates != null)
+                                                {
+                                                    <span class="duration"><i class="fa fa-calendar color"></i> @project.Dates</span>
+                                                }
+                                            </h5>
+                                            @Html.Raw(project.Description)
+                                        </li>
+                                    }
+                                </ul>
+                                <!-- /.attributes -->
+                            }
+                            else
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Projects</h2>
+                                    <div class="sep2"></div>
+                                </div>
+
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    <li class="first">
+                                        <h5>JAVA EE Programming <span class="duration"><i class="fa fa-calendar color"></i> 2015</span></h5>
+                                        <p>
+                                            Web application to propose exercices in JAVA to students. The application compile and execute their
+                                            program. If an error occurs, messages are displayed.
+                                            Else unit tests are made to validate or not the program.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>Engineering Project @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
+                                        <p>Development of an Android application to rent equipment.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Python Programming @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
+                                        <p>Web applications &amp; Web services to create and participate in auctions.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Web Conception <span class="duration"><i class="fa fa-calendar color"></i> 2014</span></h5>
+                                        <p>
+                                            Website facilitating the management of the projects of the IRSEEM
+                                            (Technology Research Institute of ESIGELEC).
+                                        </p>
+                                    </li>
+
+                                </ul>
+                                <!-- /.attributes -->
+                            }
 
                             @*<div class="title-section">
                                 <h2 class="section_title">Awards</h2>
@@ -299,65 +477,87 @@
                                 <!-- /.skillbar -->
                             </div>*@
 
+                            @if (Model.ProgrammingSkills.Any())
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Programming skills <i class="fa fa-code" aria-hidden="true"></i></h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
 
-                            <!-- .title_content -->
-                            <div class="title-section">
-                                <h2 class="section_title">Programming skills <i class="fa fa-code" aria-hidden="true"></i></h2>
-                                <div class="sep2"></div>
-                            </div>
-                            <!-- /.title_content -->
+                                <div class="skills">
+                                    @foreach (var skill in Model.ProgrammingSkills)
+                                    {
+                                        <div class="skillbar clearfix" data-percent="@skill.Value">
+                                            <div class="skillbar-title"><span>@skill.Name</span></div>
+                                            <div class="skillbar-bar"></div>
+                                            <div class="skill-bar-percent">@skill.Value</div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Programming skills <i class="fa fa-code" aria-hidden="true"></i></h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
 
-                            <div class="skills">
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="95%">
-                                    <div class="skillbar-title"><span>HTML &amp; CSS</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">95%</div>
+                                <div class="skills">
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="95%">
+                                        <div class="skillbar-title"><span>HTML &amp; CSS</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">95%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="80%">
+                                        <div class="skillbar-title"><span>Wordpress</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="85%">
+                                        <div class="skillbar-title"><span>C#, VB.NET &amp; ASP.NET</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="75%">
+                                        <div class="skillbar-title"><span>JAVA &amp; JAVA EE</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">75%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="60%">
+                                        <div class="skillbar-title"><span>Php</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">60%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="55%">
+                                        <div class="skillbar-title"><span>SQL</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">55%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="60%">
+                                        <div class="skillbar-title"><span>Python</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">60%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
                                 </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="80%">
-                                    <div class="skillbar-title"><span>Wordpress</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">80%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="85%">
-                                    <div class="skillbar-title"><span>C#, VB.NET &amp; ASP.NET</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">85%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="75%">
-                                    <div class="skillbar-title"><span>JAVA &amp; JAVA EE</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">75%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="60%">
-                                    <div class="skillbar-title"><span>Php</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">60%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="55%">
-                                    <div class="skillbar-title"><span>SQL</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">55%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="60%">
-                                    <div class="skillbar-title"><span>Python</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">60%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                            </div>
+                            }
 
                             @*<!-- .title_content -->
                             <div class="title-section">
@@ -397,106 +597,172 @@
                                 <!-- /.skillbar -->
                             </div>*@
 
-                            <!-- .title_content -->
-                            <div class="title-section">
-                                <h2 class="section_title">Language skills</h2>
-                                <div class="sep2"></div>
-                            </div>
-                            <!-- /.title_content -->
+                            @if (Model.LanguageSkills.Any())
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Language skills</h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
 
-                            <div class="skills">
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="100%">
-                                    <div class="skillbar-title"><span>French</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">100%</div>
+                                <div class="skills">
+                                    @foreach (var skill in Model.LanguageSkills)
+                                    {
+                                        <div class="skillbar clearfix" data-percent="@skill.Value">
+                                            <div class="skillbar-title"><span>@skill.Name</span></div>
+                                            <div class="skillbar-bar"></div>
+                                            <div class="skill-bar-percent">@skill.Value</div>
+                                        </div>
+                                    }
                                 </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="80%">
-                                    <div class="skillbar-title"><span>English</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">80%</div>
+                            }
+                            else
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Language skills</h2>
+                                    <div class="sep2"></div>
                                 </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="50%">
-                                    <div class="skillbar-title"><span>German</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">50%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="10%">
-                                    <div class="skillbar-title"><span>Chinese Mandarin</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">10%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="15%">
-                                    <div class="skillbar-title"><span>Finnish</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">15%</div>
-                                </div>
-                                <!-- /.skillbar -->
+                                <!-- /.title_content -->
 
-                            </div>
-
-                            <!-- .title_content -->
-                            <div class="title-section">
-                                <h2 class="section_title">Hobbies and interests</h2>
-                                <div class="sep2"></div>
-                            </div>
-                            <!-- /.title_content -->
-
-                            <div class="skills">
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="80%">
-                                    <div class="skillbar-title"><span>Music</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">80%</div>
+                                <div class="skills">
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="100%">
+                                        <div class="skillbar-title"><span>French</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">100%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="80%">
+                                        <div class="skillbar-title"><span>English</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="50%">
+                                        <div class="skillbar-title"><span>German</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">50%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="10%">
+                                        <div class="skillbar-title"><span>Chinese Mandarin</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">10%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="15%">
+                                        <div class="skillbar-title"><span>Finnish</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">15%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
                                 </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="100%">
-                                    <div class="skillbar-title"><span>travel</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">100%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="90%">
-                                    <div class="skillbar-title"><span>football</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">90%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="75%">
-                                    <div class="skillbar-title"><span>Tennis</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">75%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                            </div>
+                            }
 
-                            <!-- Qualities-->
-                            <div class="title-section">
-                                <h2 class="section_title">Qualities</h2>
-                                <div class="sep2"></div>
-                            </div>
+                            @if (Model.Interests.Any())
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Hobbies and interests</h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
 
-                            <div class="qualities" id="">
-                                <ul>
-                                    <li><i class="fa fa-check"></i> Organized</li>
-                                    <li><i class="fa fa-clock-o"></i> Punctual</li>
-                                    <li><i class="fa fa-plane"></i> Independent</li>
-                                    <li><i class="fa fa-leaf"></i> Calm</li>
-                                    <li><i class="fa fa-globe"></i> Broad-minded</li>
-                                    <li><i class="fa fa-trophy"></i> Motivated</li>
-                                </ul>
-                            </div>
+                                <div class="skills">
+                                    @foreach (var interest in Model.Interests)
+                                    {
+                                        <div class="skillbar clearfix" data-percent="@interest.Value">
+                                            <div class="skillbar-title"><span>@interest.Name</span></div>
+                                            <div class="skillbar-bar"></div>
+                                            <div class="skill-bar-percent">@interest.Value</div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Hobbies and interests</h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
+
+                                <div class="skills">
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="80%">
+                                        <div class="skillbar-title"><span>Music</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="100%">
+                                        <div class="skillbar-title"><span>travel</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">100%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="90%">
+                                        <div class="skillbar-title"><span>football</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">90%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="75%">
+                                        <div class="skillbar-title"><span>Tennis</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">75%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                </div>
+                            }
+
+                            @if (Model.Qualities.Any())
+                            {
+                                <!-- Qualities-->
+                                <div class="title-section">
+                                    <h2 class="section_title">Qualities</h2>
+                                    <div class="sep2"></div>
+                                </div>
+
+                                <div class="qualities" id="">
+                                    <ul>
+                                        @foreach (var quality in Model.Qualities)
+                                        {
+                                            <li><i class="@quality.Icon"></i> @quality.Name</li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- Qualities-->
+                                <div class="title-section">
+                                    <h2 class="section_title">Qualities</h2>
+                                    <div class="sep2"></div>
+                                </div>
+
+                                <div class="qualities" id="">
+                                    <ul>
+                                        <li><i class="fa fa-check"></i> Organized</li>
+                                        <li><i class="fa fa-clock-o"></i> Punctual</li>
+                                        <li><i class="fa fa-plane"></i> Independent</li>
+                                        <li><i class="fa fa-leaf"></i> Calm</li>
+                                        <li><i class="fa fa-globe"></i> Broad-minded</li>
+                                        <li><i class="fa fa-trophy"></i> Motivated</li>
+                                    </ul>
+                                </div>
+                            }
+
                         </div>
                         <!-- /.resume-right -->
 
@@ -553,306 +819,436 @@
                         <!-- .resume-left -->
                         <div class="col-md-6 resume-left">
 
-                            <div class="title-section">
-                                <h2 class="section_title">Experience</h2>
-                                <div class="sep2"></div>
-                            </div>
+                            <!-- from database -->
+                            @if (Model.Experiences.Any())
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Expériences</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            <!-- .attributes -->
-                            <ul class="attributes">
-                                <li class="first">
-                                    <h5>Stage de Développement Web <span class="duration"><i class="fa fa-calendar color"></i> Fév. 2016 - Aujourd'hui</span></h5>
-                                    <h6><span class="fa fa-briefcase"></span> <a href="http://www.thespider.com" target="_blank">THESPIDER - San Francisco, CA</a></h6>
-                                    <p>
-                                        Je participe à différentes étapes dans le développement d’applications web « high-end ».
-                                        Selon la demande, mon travail peut se tourner vers la création d’API, la création de templates dynamiques
-                                        après avoir mis en place les modèles et les contrôleurs (architecture MVC).
-                                        Je réalise également des contrôleurs avec AngularJS pour rendre le contenu plus fluide.<br /><br />
-                                        Les technologies sur lesquelles je travaille sont : C#, ASP.NET, Razor templates, Entity Framework, JavaScript, AngularJS, Grunt...<br /><br />
-                                        Il arrive aussi régulièrement d’avoir des courtes missions côté client, comme l’amélioration du design par exemple.
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    @foreach (var experience in Model.Experiences)
+                                    {
+                                        <li>
+                                            <h5>@experience.TitleFrench <span class="duration"><i class="fa fa-calendar color"></i> @experience.DatesFrench</span></h5>
+                                            <h6><span class="fa fa-book"></span> <a href="@experience.Link" target="_blank">@experience.Company</a></h6>
+                                            @Html.Raw(experience.DescriptionFrench)
+                                        </li>
+                                    }
+                                </ul>
+                                <!-- /.attributes -->
+                            }
+                            else
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Experience</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    <li class="first">
+                                        <h5>Stage de Développement Web <span class="duration"><i class="fa fa-calendar color"></i> Fév. 2016 - Aujourd'hui</span></h5>
+                                        <h6><span class="fa fa-briefcase"></span> <a href="http://www.thespider.com" target="_blank">THESPIDER - San Francisco, CA</a></h6>
+                                        <p>
+                                            Je participe à différentes étapes dans le développement d’applications web « high-end ».
+                                            Selon la demande, mon travail peut se tourner vers la création d’API, la création de templates dynamiques
+                                            après avoir mis en place les modèles et les contrôleurs (architecture MVC).
+                                            Je réalise également des contrôleurs avec AngularJS pour rendre le contenu plus fluide.<br /><br />
+                                            Les technologies sur lesquelles je travaille sont : C#, ASP.NET, Razor templates, Entity Framework, JavaScript, AngularJS, Grunt...<br />
+                                            Il arrive aussi régulièrement d’avoir des courtes missions côté client, comme l’amélioration du design par exemple.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>Stage de Développement VB.NET <span class="duration"><i class="fa fa-calendar color"></i> Eté 2015</span></h5>
+                                        <h6><span class="fa fa-briefcase"></span> <a href="http://fr.dcnsgroup.com" target="_blank">DCNS - Toulon, FRANCE</a></h6>
+                                        <p>Développement d’une applicationen VB.NET permettant d’archiver et de rechercher rapidement les gammes d’usinage existantes.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Emploi Saisonnier <span class="duration"><i class="fa fa-calendar color"></i> Eté 2013</span></h5>
+                                        <h6><span class="fa fa-briefcase"></span> <a href="http://www.kemone.com" target="_blank">KEM ONE - Lavéra, FRANCE</a></h6>
+                                        <p>Employé technique au service maintenance « Elec -Instrum ».</p>
+                                    </li>
+                                </ul>
+                                <!-- /.attributes -->
+                            }
 
-                                        I am taking part in every step in the development of high end web applications after the design has been created.<br>
-                                        From client side coding to back end architecture, I am guided and asked to learn and solve real business problems using code.
-                                        Technologies : C#, JavaScript, angular.js, grunt, git, bower, sql, sql server, azure.
-                                        MVC architecture.
-                                    </p>
-                                </li>
-                                <li>
-                                    <h5>Stage de Développement VB.NET <span class="duration"><i class="fa fa-calendar color"></i> Eté 2015</span></h5>
-                                    <h6><span class="fa fa-briefcase"></span> <a href="http://fr.dcnsgroup.com" target="_blank">DCNS - Toulon, FRANCE</a></h6>
-                                    <p>Développement d’une applicationen VB.NET permettant d’archiver et de rechercher rapidement les gammes d’usinage existantes.</p>
-                                </li>
-                                <li>
-                                    <h5>Emploi Saisonnier <span class="duration"><i class="fa fa-calendar color"></i> Eté 2013</span></h5>
-                                    <h6><span class="fa fa-briefcase"></span> <a href="http://www.kemone.com" target="_blank">KEM ONE - Lavéra, FRANCE</a></h6>
-                                    <p>Employé technique au service maintenance « Elec -Instrum ».</p>
-                                </li>
-                            </ul>
-                            <!-- /.attributes -->
+                            <!-- from database -->
+                            @if (Model.Educations.Any())
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Formation</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            <div class="title-section">
-                                <h2 class="section_title">Formation</h2>
-                                <div class="sep2"></div>
-                            </div>
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    @foreach (var education in Model.Educations)
+                                    {
+                                        <li>
+                                            <h5>@education.TitleFrench <span class="duration"><i class="fa fa-calendar color"></i> @education.DatesFrench</span></h5>
+                                            <h6><span class="fa fa-book"></span> <a href="@education.Link" target="_blank"> @education.School</a></h6>
+                                            @Html.Raw(education.DescriptionFrench)
+                                        </li>
+                                    }
+                                </ul>
+                                <!-- /.attributes -->
+                            }
+                            else
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Formation</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            <!-- .attributes -->
-                            <ul class="attributes">
-                                <li class="first">
-                                    <h5>Semestre d'échange <span class="duration"><i class="fa fa-calendar color"></i> Automne 2015</span></h5>
-                                    <h6><span class="fa fa-book"></span> <a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi University (Turku, Finland)</a></h6>
-                                    <p>
-                                        Development of web applications and web services |
-                                        Introduction to Many-Core Programming |
-                                        Specification Methods |
-                                        Software Testing |
-                                        Introduction to Game Development Tools |
-                                        Finnish as a Foreign Language, level 1
-                                    </p>
-                                </li>
-                                <li>
-                                    <h5>Ecole d'ingénieurs <span class="duration"><i class="fa fa-calendar color"></i> 2011 - 2016</span></h5>
-                                    <h6><span class="fa fa-book"></span> <a href="http://www.esigelec.fr/en" target="_blank"> ESIGELEC (Normandie, France)</a></h6>
-                                    <p>
-                                        Ecole Post-Bac, généraliste<br>
-                                        Dominante « Génie des Systèmes d'Informations ».
-                                    </p>
-                                </li>
-                            </ul>
-                            <!-- /.attributes -->
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    <li class="first">
+                                        <h5>Semestre d'échange <span class="duration"><i class="fa fa-calendar color"></i> Automne 2015</span></h5>
+                                        <h6><span class="fa fa-book"></span> <a href="http://www.abo.fi/public/en/" target="_blank">Åbo Akademi University (Turku, Finland)</a></h6>
+                                        <p>
+                                            Development of web applications and web services |
+                                            Introduction to Many-Core Programming |
+                                            Specification Methods |
+                                            Software Testing |
+                                            Introduction to Game Development Tools |
+                                            Finnish as a Foreign Language, level 1
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>Ecole d'ingénieurs <span class="duration"><i class="fa fa-calendar color"></i> 2011 - 2016</span></h5>
+                                        <h6><span class="fa fa-book"></span> <a href="http://www.esigelec.fr/en" target="_blank"> ESIGELEC (Normandie, France)</a></h6>
+                                        <p>
+                                            Ecole Post-Bac, généraliste<br>
+                                            Dominante « Génie des Systèmes d'Informations ».
+                                        </p>
+                                    </li>
+                                </ul>
+                                <!-- /.attributes -->
+                            }
 
-                            <div class="title-section">
-                                <h2 class="section_title">Projets</h2>
-                                <div class="sep2"></div>
-                            </div>
+                            <!-- from database -->
+                            @if (Model.Projects.Any())
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Projects</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            <!-- .attributes -->
-                            <ul class="attributes">
-                                <li class="first">
-                                    <h5>Programmation en JAVA EE <span class="duration"><i class="fa fa-calendar color"></i> 2015</span></h5>
-                                    <p>
-                                        Création d’une plateforme de certification pour JAVA.
-                                        L’outil permet la diffusion d’exercices JAVA à des étudiants.
-                                        Les réponses sont soumises à correction, puis un test unitaire est exécuté
-                                        sur le serveur afin de valider ou non le programme.
-                                    </p>
-                                </li>
-                                <li>
-                                    <h5>Projet Ingénieur @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
-                                    <p>Développement d’une application Android pour la location de biens entre particuliers.</p>
-                                </li>
-                                <li>
-                                    <h5>Programmation en Python @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
-                                    <p>Applications &amp; Services Web pour créer et participer à des enchères.</p>
-                                </li>
-                                <li>
-                                    <h5>Conception Web <span class="duration"><i class="fa fa-calendar color"></i> 2014</span></h5>
-                                    <p>
-                                        Plateforme permettant de faciliter la gestion des projets de l’Institut de recherche de l’école
-                                    </p>
-                                </li>
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    @foreach (var project in Model.Projects)
+                                    {
+                                        <li>
+                                            <h5>
+                                                @project.TitleFrench
+                                            @if (@project.Dates != null)
+                                            {
+                                                <span class="duration"><i class="fa fa-calendar color"></i> @project.DatesFrench</span>
+                                            }
+                                        </h5>
+                                        @Html.Raw(project.DescriptionFrench)
+                                    </li>
+                                    }
+                                </ul>
+                                <!-- /.attributes -->
+                            }
+                            else
+                            {
+                                <div class="title-section">
+                                    <h2 class="section_title">Projets</h2>
+                                    <div class="sep2"></div>
+                                </div>
 
-                            </ul>
-                            <!-- /.attributes -->
-                            @*<div class="title-section">
-                        <h2 class="section_title">Awards</h2>
-                        <div class="sep2"></div>
-                    </div>*@
+                                <!-- .attributes -->
+                                <ul class="attributes">
+                                    <li class="first">
+                                        <h5>Programmation en JAVA EE <span class="duration"><i class="fa fa-calendar color"></i> 2015</span></h5>
+                                        <p>
+                                            Création d’une plateforme de certification pour JAVA.
+                                            L’outil permet la diffusion d’exercices JAVA à des étudiants.
+                                            Les réponses sont soumises à correction, puis un test unitaire est exécuté
+                                            sur le serveur afin de valider ou non le programme.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h5>Projet Ingénieur @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
+                                        <p>Développement d’une application Android pour la location de biens entre particuliers.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Programmation en Python @*<span class="duration"><i class="fa fa-calendar color"></i> 2015</span>*@</h5>
+                                        <p>Applications &amp; Services Web pour créer et participer à des enchères.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Conception Web <span class="duration"><i class="fa fa-calendar color"></i> 2014</span></h5>
+                                        <p>
+                                            Plateforme permettant de faciliter la gestion des projets de l’Institut de recherche de l’école
+                                        </p>
+                                    </li>
 
-                            <!-- .attributes -->
-                            @*<ul class="attributes">
-                        <li class="first">
-                            <h5>Graphic &amp; Art Direction <span class="duration"><i class="fa fa-calendar color"></i> 2013 - 2014</span></h5>
-                            <h6><span class="fa fa-trophy"></span> Name of Institute</h6>
-                            <p>Emi Phasellus congue auctor risuspon, eget males. Pellentes que un imperdiet, odio quis orn sollicitud. Sed vitae lectus elementum mauris.</p>
-                        </li>
-                        <li>
-                            <h5>Design &amp; Art Direction <span class="duration"><i class="fa fa-calendar color"></i> 2012 - 2013</span></h5>
-                            <h6><span class="fa fa-trophy"></span> Name of Institute</h6>
-                            <p>Emi Phasellus congue auctor risuspon, eget males. Pellentes que un imperdiet, odio quis orn sollicitud. Sed vitae lectus elementum mauris.</p>
-                        </li>
-
-                    </ul>*@
-                            <!-- /.attributes -->
-                            <!-- .title_content -->
-                            @*<div class="title-section">
-                                <h2 class="section_title">Télécharger Mon CV</h2>
-                                <div class="sep2"></div>
-                            </div>*@
-                            <!-- /.title_content -->
-                            <!-- .download_resume -->
-                            @*<a class="download" href="../Uploads/CV.pdf" target="_blank">
-                                <span data-hover="Download My Resume"><i class="fa fa-cloud-download"></i> Télécharger Mon CV</span>
-                            </a>*@
-                            <!-- /.download_resume -->
+                                </ul>
+                                <!-- /.attributes -->
+                            }
 
                         </div>
                         <!-- /.resume-left -->
                         <!-- .resume-right -->
                         <div class="col-md-6">
-                            <!-- .title_content -->
-                            <div class="title-section">
-                                <h2 class="section_title">Programmation <i class="fa fa-code" aria-hidden="true"></i></h2>
-                                <div class="sep2"></div>
-                            </div>
-                            <!-- /.title_content -->
 
-                            <div class="skills">
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="95%">
-                                    <div class="skillbar-title"><span>HTML &amp; CSS</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">95%</div>
+                            @if (Model.ProgrammingSkills.Any())
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Programmation <i class="fa fa-code" aria-hidden="true"></i></h2>
+                                    <div class="sep2"></div>
                                 </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="80%">
-                                    <div class="skillbar-title"><span>Wordpress</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">80%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="85%">
-                                    <div class="skillbar-title"><span>C#, VB.NET &amp; ASP.NET</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">85%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="75%">
-                                    <div class="skillbar-title"><span>JAVA &amp; JAVA EE</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">75%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="60%">
-                                    <div class="skillbar-title"><span>Php</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">60%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="55%">
-                                    <div class="skillbar-title"><span>SQL</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">55%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="60%">
-                                    <div class="skillbar-title"><span>Python</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">60%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                            </div>
+                                <!-- /.title_content -->
 
-                            <!-- .title_content -->
-                            <div class="title-section">
-                                <h2 class="section_title">Language skills</h2>
-                                <div class="sep2"></div>
-                            </div>
-                            <!-- /.title_content -->
+                                <div class="skills">
+                                    @foreach (var skill in Model.ProgrammingSkills)
+                                    {
+                                        <div class="skillbar clearfix" data-percent="@skill.Value">
+                                            <div class="skillbar-title"><span>@skill.Name</span></div>
+                                            <div class="skillbar-bar"></div>
+                                            <div class="skill-bar-percent">@skill.Value</div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Programmation <i class="fa fa-code" aria-hidden="true"></i></h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
 
-                            <div class="skills">
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="100%">
-                                    <div class="skillbar-title"><span>Français</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">100%</div>
+                                <div class="skills">
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="95%">
+                                        <div class="skillbar-title"><span>HTML &amp; CSS</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">95%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="80%">
+                                        <div class="skillbar-title"><span>Wordpress</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="85%">
+                                        <div class="skillbar-title"><span>C#, VB.NET &amp; ASP.NET</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="75%">
+                                        <div class="skillbar-title"><span>JAVA &amp; JAVA EE</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">75%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="60%">
+                                        <div class="skillbar-title"><span>Php</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">60%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="55%">
+                                        <div class="skillbar-title"><span>SQL</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">55%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="60%">
+                                        <div class="skillbar-title"><span>Python</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">60%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
                                 </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="80%">
-                                    <div class="skillbar-title"><span>Anglais</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">80%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="50%">
-                                    <div class="skillbar-title"><span>Allemand</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">50%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="10%">
-                                    <div class="skillbar-title"><span>Chinois</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">10%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="15%">
-                                    <div class="skillbar-title"><span>Finnois</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">15%</div>
-                                </div>
-                                <!-- /.skillbar -->
+                            }
 
-                            </div>
-
-                            <!-- .title_content -->
-                            <div class="title-section">
-                                <h2 class="section_title">Centres d'intérêts</h2>
-                                <div class="sep2"></div>
-                            </div>
-                            <!-- /.title_content -->
-
-                            <div class="skills">
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix" data-percent="80%">
-                                    <div class="skillbar-title"><span>Musique</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">80%</div>
+                            @if (Model.LanguageSkills.Any())
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Langues</h2>
+                                    <div class="sep2"></div>
                                 </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="100%">
-                                    <div class="skillbar-title"><span>Voyages</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">100%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="90%">
-                                    <div class="skillbar-title"><span>Football</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">90%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                                <!-- .skillbar -->
-                                <div class="skillbar clearfix " data-percent="75%">
-                                    <div class="skillbar-title"><span>Tennis</span></div>
-                                    <div class="skillbar-bar"></div>
-                                    <div class="skill-bar-percent">75%</div>
-                                </div>
-                                <!-- /.skillbar -->
-                            </div>
+                                <!-- /.title_content -->
 
-                            <!-- Qualities-->
-                            <div class="title-section">
-                                <h2 class="section_title">Qualités</h2>
-                                <div class="sep2"></div>
-                            </div>
+                                <div class="skills">
+                                    @foreach (var skill in Model.LanguageSkills)
+                                    {
+                                        <div class="skillbar clearfix" data-percent="@skill.Value">
+                                            <div class="skillbar-title"><span>@skill.NameFrench</span></div>
+                                            <div class="skillbar-bar"></div>
+                                            <div class="skill-bar-percent">@skill.Value</div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Langues</h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
 
-                            <div class="qualities" id="">
-                                <ul>
-                                    <li><i class="fa fa-check"></i> Ordonné</li>
-                                    <li><i class="fa fa-clock-o"></i> Ponctuel</li>
-                                    <li><i class="fa fa-plane"></i> Autonome</li>
-                                    <li><i class="fa fa-leaf"></i> Calme</li>
-                                    <li><i class="fa fa-globe"></i> Ouvert d'esprit</li>
-                                    <li><i class="fa fa-trophy"></i> Motivé</li>
-                                </ul>
-                            </div>
+                                <div class="skills">
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="100%">
+                                        <div class="skillbar-title"><span>Français</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">100%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="80%">
+                                        <div class="skillbar-title"><span>Anglais</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="50%">
+                                        <div class="skillbar-title"><span>Allemand</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">50%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="10%">
+                                        <div class="skillbar-title"><span>Chinois</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">10%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="15%">
+                                        <div class="skillbar-title"><span>Finnois</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">15%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                </div>
+                            }
+
+                            @if (Model.Interests.Any())
+                            {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Centres d'intérêt</h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
+
+                                <div class="skills">
+                                    @foreach (var interest in Model.Interests)
+                                    {
+                                        <div class="skillbar clearfix" data-percent="@interest.Value">
+                                            <div class="skillbar-title"><span>@interest.NameFrench</span></div>
+                                            <div class="skillbar-bar"></div>
+                                            <div class="skill-bar-percent">@interest.Value</div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else {
+                                <!-- .title_content -->
+                                <div class="title-section">
+                                    <h2 class="section_title">Centres d'intérêts</h2>
+                                    <div class="sep2"></div>
+                                </div>
+                                <!-- /.title_content -->
+
+                                <div class="skills">
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix" data-percent="80%">
+                                        <div class="skillbar-title"><span>Musique</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="100%">
+                                        <div class="skillbar-title"><span>Voyages</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">100%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="90%">
+                                        <div class="skillbar-title"><span>Football</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">90%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                    <!-- .skillbar -->
+                                    <div class="skillbar clearfix " data-percent="75%">
+                                        <div class="skillbar-title"><span>Tennis</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">75%</div>
+                                    </div>
+                                    <!-- /.skillbar -->
+                                </div>
+                            }
+
+                            @if (Model.Qualities.Any())
+                            {
+                                <!-- Qualities-->
+                                <div class="title-section">
+                                    <h2 class="section_title">Qualités</h2>
+                                    <div class="sep2"></div>
+                                </div>
+
+                                <div class="qualities" id="">
+                                    <ul>
+                                        @foreach (var quality in Model.Qualities)
+                                        {
+                                            <li><i class="@quality.Icon"></i> @quality.NameFrench</li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- Qualities-->
+                                <div class="title-section">
+                                    <h2 class="section_title">Qualités</h2>
+                                    <div class="sep2"></div>
+                                </div>
+
+                                <div class="qualities" id="">
+                                    <ul>
+                                        <li><i class="fa fa-check"></i> Ordonné</li>
+                                        <li><i class="fa fa-clock-o"></i> Ponctuel</li>
+                                        <li><i class="fa fa-plane"></i> Autonome</li>
+                                        <li><i class="fa fa-leaf"></i> Calme</li>
+                                        <li><i class="fa fa-globe"></i> Ouvert d'esprit</li>
+                                        <li><i class="fa fa-trophy"></i> Motivé</li>
+                                    </ul>
+                                </div>
+                            }
+
                         </div>
                         <!-- /.resume-right -->
 
                     </div>
+
                     <!-- /.end row -->
                 </div>
                 <!-- End .section_general french -->
@@ -2659,67 +3055,3 @@
 
 </div>
 <!-- End #portfolio_single -->
-
-@*<section id="gallery" class="layers">
-    <h2 style="display: none">gallery</h2>
-    <!-- page content -->
-    <div class="page_content" tabindex="2" style="overflow-y: hidden; outline: none;">
-        <!-- block header -->
-        <div class="block-header">
-            <div class="mygallery">
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
-                        <h4>Project Name</h4>
-                        <p><span class="cat-portfolio">posters, webdesign</span></p>
-
-                        <div class="portf_detail">
-                            <a href="../Images/Portfolio/SF_Skyline.jpg" data-gal="portfolio" class="info open-imag">
-                                <i class="fa fa-search"></i>
-                            </a>
-
-                            <a href="#" class="info external open_port_detail" data-id="1">
-                                <i class="fa fa-link"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-                <div class="gallery-3-col">
-                    <img src="../Images/Portfolio/SF_Skyline.jpg" alt="" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>*@

@@ -10,11 +10,19 @@
     /*Page Preloading*/
     $(window).load(function () {
         // check if there is a cookie to set language to french or not
-        cookie = readCookie("language-BriceSite");
-        if (cookie == "french") {
-            $(".copyright span").toggleClass("inactive");
-            $(".bg_desc, .bg_info, .col-lg-11.section_general, .navigation .list-unstyled, #genre-filter li.label_filter").toggleClass("language-inactive");
-        }
+        //cookie = readCookie("language-BriceSite");
+        //if (cookie == "french") {
+        //    $(".copyright span").toggleClass("inactive");
+        //    $(".bg_desc, .bg_info, .col-lg-11.section_general, .navigation .list-unstyled, #genre-filter li.label_filter").toggleClass("language-inactive");
+        //}
+
+        // on load, we check the color in the database, and we set it
+        //var current_color = ""
+        //current_color = getCurrentColor();
+        // alert("."+current_color);
+        //$("."+current_color).trigger("click");
+        getCurrentColor();
+
         $('.preloader').fadeOut();
         $('.wrapper-content').css('opacity', '1').fadeIn();
         $('#custumize-style').fadeIn();
@@ -37,6 +45,18 @@
             }
         }
 
+    });
+
+    /* colors */
+    //if the admin click on one color, we store this color in the database
+    //and the users see the website with this color
+
+    $("#custumize-style .colors-style li a").click(function (e) {
+        e.preventDefault();
+        //var theColorIs = $(this).css("background-color");
+        var theColorIs = $(this).attr("class");
+        //alert("selected color : "+theColorIs);
+        saveColor(theColorIs);
     });
 
     /* ---------------------------------------------------------------------- */
@@ -576,4 +596,18 @@ function readCookie(name) {
 
 function eraseCookie(name) {
     createCookie(name, "", -1);
+}
+
+function saveColor(theColorIs) {
+    $.getJSON('api/Color/'+theColorIs, function (html) {
+        //alert("Success! This color has been saved : "+theColorIs);
+    });
+}
+
+function getCurrentColor() {
+    var color = "";
+    $.getJSON('api/Color/', function (result) {
+        color = result;
+        $("."+result).trigger("click");
+    });
 }

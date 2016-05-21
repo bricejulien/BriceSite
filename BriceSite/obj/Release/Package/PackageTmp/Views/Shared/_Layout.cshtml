@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model BriceSite.Models.HomeViewModels
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,22 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 
     <!-- CSS | simple-line-icons -->
     <!-- Credits: https://github.com/thesabbir/simple-line-icons -->
-    <link rel="stylesheet" type="text/css" href="../CSS/simple-line-icons.css">
+    <link rel="stylesheet" type="text/css" href="~/CSS/simple-line-icons.css">
 
     <!-- CSS | animate -->
     <!-- http://daneden.github.io/animate.css/ -->
-    <link rel="stylesheet" href="../CSS/animate.min.css">
+    <link rel="stylesheet" href="~/CSS/animate.min.css">
 
     <!-- CSS | prettyPhoto -->
     <!-- Credits: http://www.no-margin-for-errors.com/ -->
-    <link rel="stylesheet" type="text/css" href="../CSS/prettyPhoto.css" />
+    <link rel="stylesheet" type="text/css" href="~/CSS/prettyPhoto.css" />
+
+    <!-- CSS | colors -->
+    <!-- Credits: http://themeforest.net/user/FlexyCodes -->
+    <!-- color used when the pade is loading -->
+    <link rel="stylesheet" type="text/css" href="~/CSS/colors/color_4.css" id="colors-style" />
+    <link rel="stylesheet" type="text/css" href="~/CSS/switcher.css" />
 
 
     @Styles.Render("~/Content/css")
-    <link rel="stylesheet" type="text/css" href="../Content/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/fontawesome/font-awesome.min.css">
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -34,7 +43,7 @@
             </div>
 
             <div class="logo">
-                <a href="#"><img style="cursor: default;" src="images/Profile2.jpg" width="122" height="122" alt="Logo"></a>
+                <a href="#"><img style="cursor: default;" src="~/Images/Profile2.jpg" width="122" height="122" alt="Logo"></a>
             </div>
 
             <h4 class="tagline">
@@ -100,12 +109,21 @@
             <!-- End #header_social_ul -->
             <!-- .copyright -->
             <div class="copyright">
-                <p style="margin-bottom:0;">© 2016. Brice Julien</p>
+                <p style="margin-bottom:0;">© 2016. <span style="font-weight: bold; color: white;">Brice Julien</span></p>
             </div>
             <!-- End.copyright -->
             <!-- Language, using same design as the copyright section -->
             <div class="copyright">
                 <p style="margin-bottom:0;"><span>English</span> | <span class="inactive">French</span></p>
+                @if (User.Identity.IsAuthenticated && User.Identity.Name.Equals("bricejulien.thespider@gmail.com"))
+                {
+                    using (Html.BeginForm("changeMainColor", "Home", FormMethod.Post, null))
+                    {
+                        <label>Color</label><input type="text" name="color" /><br />
+                        <label>Selectors</label><input type="text" name="selectors" />
+                        <input type="submit" value="Change color" />
+                    }
+                }
             </div>
             <!-- End.copyright -->
 
@@ -151,9 +169,132 @@
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("Scripts", required: false)
 
+    @if (User.Identity.IsAuthenticated && User.Identity.Name.Equals("bricejulien.thespider@gmail.com"))
+    {
+        <!-- Switcher -->
+        <div id="custumize-style">
+
+            <!--<h2>Style Selector<a href="#" class="switcher"><span class="changebutton"><i class="fa fa-cog fa-spin"></i></span></a></h2>-->
+
+            <h1>Layout Color Switcher</h1>
+            <a href="#" class="switcher"><span class="changebutton"><i class="fa fa-cog fa-spin"></i></span></a>
+
+            <div class="switcher_content">
+                <p>Choose one color below to change main layout color. You can apply more styles in theme options.</p>
+
+                <div>
+                    <h3>Skins Colors</h3>
+                    <ul class="colors-style" id="color1">
+                        <li><a href="#" class="color_1"></a></li>
+                        <li><a href="#" class="color_2"></a></li>
+                        <li><a href="#" class="color_3"></a></li>
+                        <li><a href="#" class="color_4"></a></li>
+                        <li><a href="#" class="color_5"></a></li>
+                        <li><a href="#" class="color_6"></a></li>
+                        <li><a href="#" class="color_7"></a></li>
+                        <li><a href="#" class="color_8"></a></li>
+                        <li><a href="#" class="color_9"></a></li>
+                        <li><a href="#" class="color_10"></a></li>
+                        <li><a href="#" class="color_11"></a></li>
+                        <li><a href="#" class="color_12"></a></li>
+                        <li><a href="#" class="color_13"></a></li>
+                        <li><a href="#" class="color_14"></a></li>
+                        <li><a href="#" class="color_15"></a></li>
+                        <li><a href="#" class="color_16"></a></li>
+                        <li><a href="#" class="color_17"></a></li>
+                        <li><a href="#" class="color_18"></a></li>
+                        <li><a href="#" class="color_19"></a></li>
+                        <li><a href="#" class="color_20"></a></li>
+                        <li><a href="#" class="color_21"></a></li>
+                        <li><a href="#" class="color_22"></a></li>
+                        <li><a href="#" class="color_23"></a></li>
+                        <li><a href="#" class="color_24"></a></li>
+                        <li><a href="#" class="color_25"></a></li>
+                        <li><a href="#" class="color_26"></a></li>
+                        <li><a href="#" class="color_27"></a></li>
+                        <li><a href="#" class="color_28"></a></li>
+                        <li><a href="#" class="color_29"></a></li>
+                        <li><a href="#" class="color_30"></a></li>
+                    </ul>
+                </div>
+
+                <div id="button-reset"><a href="#" class="button color green boxed">Reset</a></div>
+
+            </div>
+
+
+        </div>
+    <!-- End Switcher -->
+    }
+    else
+    {
+        <div style="display: none;">
+            <!-- Switcher -->
+            <div id="custumize-style">
+
+                <!--<h2>Style Selector<a href="#" class="switcher"><span class="changebutton"><i class="fa fa-cog fa-spin"></i></span></a></h2>-->
+
+                <h1>Layout Color Switcher</h1>
+                <a href="#" class="switcher"><span class="changebutton"><i class="fa fa-cog fa-spin"></i></span></a>
+
+                <div class="switcher_content">
+                    <p>Choose one color below to change main layout color. You can apply more styles in theme options.</p>
+
+                    <div>
+                        <h3>Skins Colors</h3>
+                        <ul class="colors-style" id="color1">
+                            <li><a href="#" class="color_1"></a></li>
+                            <li><a href="#" class="color_2"></a></li>
+                            <li><a href="#" class="color_3"></a></li>
+                            <li><a href="#" class="color_4"></a></li>
+                            <li><a href="#" class="color_5"></a></li>
+                            <li><a href="#" class="color_6"></a></li>
+                            <li><a href="#" class="color_7"></a></li>
+                            <li><a href="#" class="color_8"></a></li>
+                            <li><a href="#" class="color_9"></a></li>
+                            <li><a href="#" class="color_10"></a></li>
+                            <li><a href="#" class="color_11"></a></li>
+                            <li><a href="#" class="color_12"></a></li>
+                            <li><a href="#" class="color_13"></a></li>
+                            <li><a href="#" class="color_14"></a></li>
+                            <li><a href="#" class="color_15"></a></li>
+                            <li><a href="#" class="color_16"></a></li>
+                            <li><a href="#" class="color_17"></a></li>
+                            <li><a href="#" class="color_18"></a></li>
+                            <li><a href="#" class="color_19"></a></li>
+                            <li><a href="#" class="color_20"></a></li>
+                            <li><a href="#" class="color_21"></a></li>
+                            <li><a href="#" class="color_22"></a></li>
+                            <li><a href="#" class="color_23"></a></li>
+                            <li><a href="#" class="color_24"></a></li>
+                            <li><a href="#" class="color_25"></a></li>
+                            <li><a href="#" class="color_26"></a></li>
+                            <li><a href="#" class="color_27"></a></li>
+                            <li><a href="#" class="color_28"></a></li>
+                            <li><a href="#" class="color_29"></a></li>
+                            <li><a href="#" class="color_30"></a></li>
+                        </ul>
+                    </div>
+
+                    <div id="button-reset"><a href="#" class="button color green boxed">Reset</a></div>
+
+                </div>
+
+
+            </div>
+            <!-- End Switcher -->
+        </div>
+        
+    }
+
+
     <!-- Js | jquery.ui.effect.js -->
     <!-- Credits: https://jqueryui.com/effect -->
     <script type="text/javascript" src="../Scripts/main/jquery.ui.effect.min.js"></script>
+
+    <!-- Js | switcher -->
+    <!-- Credits: http://themeforest.net/user/FlexyCodes -->
+    <script type="text/javascript" src="../Scripts/main/switcher.js"></script>
 
     <!-- Js | nicescroll.js -->
     <!-- Credits: http://areaaperta.com/nicescroll -->
@@ -263,6 +404,17 @@
         $('#menu_closed').tooltip({
             placement: "right"
         });
+    </script>
+
+    <!-- COLORS -->
+    <script>
+        @*$(document).ready(function () {
+            $('.navigation > ul > li::before').css('background-color', '@Model.Color.Value');
+        });*@
+
+        @*$(".navigation > ul > li::before").hover(function (e) {
+            $(this).css("background-color", e.type === "mouseenter" ? "@Model.Color.Value" : "green")
+        });*@
     </script>
 </body>
 </html>

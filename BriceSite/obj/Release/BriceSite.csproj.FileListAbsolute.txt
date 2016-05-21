@@ -89,3 +89,5 @@ C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BriceSite\bin\Sys
 C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BriceSite\obj\Release\BriceSite.csprojResolveAssemblyReference.cache
 C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BriceSite\obj\Release\BriceSite.dll
 C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BriceSite\obj\Release\BriceSite.pdb
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BriceSite\bin\BricejModels.dll
+C:\Users\brice\Documents\Visual Studio 2015\Projects\BriceSite\BriceSite\bin\BricejModels.pdb

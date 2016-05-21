@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BriceSite", "BriceSite\BriceSite.csproj", "{75A31445-5EED-45D2-9DE9-5DA9E8CAE0B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BricejModels", "BricejModels\BricejModels.csproj", "{54784B05-C0C2-451B-BEBD-EF57472DAFBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{75A31445-5EED-45D2-9DE9-5DA9E8CAE0B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75A31445-5EED-45D2-9DE9-5DA9E8CAE0B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75A31445-5EED-45D2-9DE9-5DA9E8CAE0B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54784B05-C0C2-451B-BEBD-EF57472DAFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54784B05-C0C2-451B-BEBD-EF57472DAFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54784B05-C0C2-451B-BEBD-EF57472DAFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54784B05-C0C2-451B-BEBD-EF57472DAFBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
