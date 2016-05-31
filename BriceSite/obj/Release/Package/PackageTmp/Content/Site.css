@@ -694,7 +694,9 @@ textarea {
 /* RESUME */
 #resume {
     /*background: #fff;*/
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(../Images/bg_resume.jpg)
+    /*background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(../Images/bg_resume.jpg)
+    center center/1690px 1000px no-repeat;*/
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../Images/Portfolio/Lapland.jpg)
     center center/1690px 1000px no-repeat;
 }
 
@@ -2075,7 +2077,7 @@ hr.separate_port {
 }
 
 .btn_home a {
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     padding: 15px 30px 15px 30px;
     background: rgba(255,255,255,0.2);
     color: #fff;
@@ -2096,7 +2098,7 @@ hr.separate_port {
 .btn_home a.btn_color {
     margin-right: 20px;
     background: rgba(0, 200, 170, 0.5);
-    border: 1px solid #00c8aa;
+    /*border: 1px solid #00c8aa;*/
 }
 
 .btn_home a.btn_color:hover {
