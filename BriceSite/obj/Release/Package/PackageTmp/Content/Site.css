@@ -1162,7 +1162,7 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
         width: 50%;
     }
 
-    #home .page_content .row ul li {
+    #home .page_content .row ul li:first-child {
         margin-right: -10px;
     }
 
@@ -2067,4 +2067,38 @@ hr.separate_port {
 
 .navigation > ul > li:first-child.active > a {
     color: #fff;
+}
+
+/* buttons home page */
+.btn_home {
+    margin-top: 40px;
+}
+
+.btn_home a {
+    border: 1px solid #fff;
+    padding: 15px 30px 15px 30px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: 'Montserrat';
+    webkit-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.btn_home a:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+.btn_home a.btn_color {
+    margin-right: 20px;
+    background: rgba(0, 200, 170, 0.5);
+    border: 1px solid #00c8aa;
+}
+
+.btn_home a.btn_color:hover {
+    background: #00c8aa;
 }

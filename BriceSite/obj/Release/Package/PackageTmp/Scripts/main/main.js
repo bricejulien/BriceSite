@@ -34,7 +34,7 @@
 
         if ($(this).hasClass('inactive')) {
             $(".copyright span").toggleClass("inactive");
-            $(".bg_desc, .bg_info, .col-lg-11.section_general, .navigation .list-unstyled, #genre-filter li.label_filter").toggleClass("language-inactive");
+            $(".bg_desc, .bg_info, .col-lg-11.section_general, .navigation .list-unstyled, #genre-filter li.label_filter, #home .block-header").toggleClass("language-inactive");
             cookie = readCookie("language-BriceSite");
             if (cookie != "french") {
                 cookie = createCookie("language-BriceSite","french",1)

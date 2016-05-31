@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <!-- CSS | simple-line-icons -->
     <!-- Credits: https://github.com/thesabbir/simple-line-icons -->
@@ -85,7 +86,10 @@
                 </ul>
                 <!-- french-->
                 <ul class="list-unstyled language-inactive">
-                    <li class="profile active">
+                    <li class="home active">
+                        <a href="#home" class="home link_menu"><i class="fa fa-globe icon_menus"></i><span class="nav-label" style="font-weight: bold;">Accueil</span></a>
+                    </li>
+                    <li class="profile">
                         <a href="#profile" class="profile link_menu"><i class="fa fa-user icon_menus"></i><span class="nav-label">Profil</span></a>
                     </li>
                     <li class="resume">
@@ -321,7 +325,8 @@
 		//        },6000);
 	    //    });
         //});
-        $('.list-unstyled li a.link_menu').click(function () {
+
+        $('.list-unstyled li a.link_menu, .btn_home a.link_menu').click(function () {
 
             var ahref = $(this).attr('href').split("#");
             var id_name = ahref[1];
