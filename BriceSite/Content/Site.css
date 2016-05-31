@@ -1214,6 +1214,10 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
         margin-top: 30px;
     }
 
+    #home .block-header span {
+        font-size: 60px !important;
+    }
+
     /* COLORS FOR MOBILE PHONES */
     .my_profile .info_profile h2, .section-header h3, .service:hover .service-icon,
     .service .service-title a, .testimonials span strong, .clients span strong,
