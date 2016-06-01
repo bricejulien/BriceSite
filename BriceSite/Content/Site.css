@@ -693,15 +693,16 @@ textarea {
 
 /* RESUME */
 #resume {
-    /*background: #fff;*/
+    background: #333333;
     /*background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) ), url(../Images/bg_resume.jpg)
     center center/1690px 1000px no-repeat;*/
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../Images/Portfolio/Lapland.jpg)
-    center center/1690px 1000px no-repeat;
+    /*background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../Images/Portfolio/Lapland.jpg)
+    center center/1690px 1000px no-repeat;*/
 }
 
 #resume .title-section h2.section_title {
     color: white;
+    font-family: 'Montserrat' !important;
 }
 
 #resume .page_content {
@@ -719,7 +720,13 @@ textarea {
     font-size: 15px;
 }
 
-#resume .attributes {
+
+
+#resume .attributes, #resume .skills {
+    margin-bottom: 60px;
+}
+
+#resume .attributes li {
     margin-bottom: 30px;
 }
 
@@ -961,8 +968,8 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
     color: white;
     font-size: 15px;
     display: inline-block;
-    margin-right: 3px;
-    margin-left: 3px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .qualities ul li i {
@@ -972,7 +979,8 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
 
 
 .qualities {
-    background-color: rgba(34,34,34,0.8);
+    /*background-color: rgba(34,34,34,0.8);*/
+    background-color: rgba(0, 200, 170, 0.5);
     text-align: center;
 }
 
@@ -1066,6 +1074,16 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
 @media screen and (max-width: 1300px) {
     .portfolios .grid div.view {
         width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #resume .resume-left {
+        padding-right: 40px;
+    }
+
+    #resume .resume-right {
+        padding-left: 40px;
     }
 }
 
