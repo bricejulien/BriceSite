@@ -705,6 +705,10 @@ textarea {
     font-family: 'Montserrat' !important;
 }
 
+#resume .projects_list li h5 {
+    margin-bottom: 10px;
+}
+
 #resume .page_content {
     overflow-y: hidden;
     outline: none;
@@ -743,7 +747,7 @@ textarea {
     /*color: #444;*/
     color: white;
     font-weight: bold;
-    border-bottom: none !important;
+    /*border-bottom: none !important;*/
 }
 
 #resume .col-md-6 span.duration {
