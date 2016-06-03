@@ -146,8 +146,7 @@ a.download:hover {
 .btn-u,
 .pricing-head h3,
 .title_content:after, .icon_content,
-a.download,
-#header #menu_closed {
+a.download {
   background-color: #009473;
 }
 
@@ -188,4 +187,13 @@ h2.section_title {
 }
 .navigation > ul > li:first-child > a {
     color: #009473;
+}
+
+#wrappers .content_wrappers #btn_open_menu {
+    color: #009473 !important;
+}
+
+#header #menu_closed i {
+    color: #009473 !important;
+
 }

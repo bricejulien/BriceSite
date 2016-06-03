@@ -366,7 +366,8 @@ textarea {
 }*/
 
 .my_profile .image_profile {
-    background-image: url("../Images/profile11.jpg?v=0");
+    /*background-image: url("../Images/profile11.jpg?v=0");*/
+    background: url("/Images/Profile/Profile1.jpg?v=0");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -377,7 +378,8 @@ textarea {
 }
 
 .my_profile .image_profile {
-    background:  linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("../Images/profile11.jpg?v=0");
+    /*background:  linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("../Images/profile11.jpg?v=0");*/
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("/Images/Profile/Profile1.jpg?v=0");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -751,7 +753,7 @@ textarea {
 }
 
 #resume .col-md-6 span.duration {
-    float: right;
+    /*float: right;*/
 }
 
 #resume .attributes .duration i {
@@ -1004,8 +1006,8 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
     position: fixed;
     width: 100%;
     display:none;
-    border-bottom: 1px solid #e6e6e6;
-    background: rgba(34,34,34,1) !important;
+    /*border-bottom: 1px solid #e6e6e6;*/
+    background: #191818 !important;
 }
 
 #wrappers .content_wrappers {
@@ -1146,6 +1148,13 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
     }
 }
 
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+    #resume .col-md-6 span.duration {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
 @media screen and (max-width: 992px) {
     #genre-filter {
         margin-top: 30px !important;
@@ -1212,10 +1221,27 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
     }
 }
 
+@media screen and (min-width: 1199px) {
+    #resume .col-md-6 span.duration {
+        float: right;
+    }
+}
+
+@media screen and (min-width: 491px) and (max-width: 991px) {
+    #resume .col-md-6 span.duration {
+        float: right;
+    }
+}
+
 @media screen and (max-width: 490px){
 	.service-content {
 		margin-top: 50px;
 	}
+
+    #resume .col-md-6 span.duration {
+        display: block;
+        margin-top: 10px;
+    }
 
     #portfoliolist .portf_detail {
         bottom: 20% !important;
@@ -2041,7 +2067,8 @@ hr.separate_port {
 
 /* Home section */
 #home .page_content {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(/Images/Portfolio/Death_Valley.jpg);
+    /*background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(/Images/Portfolio/Death_Valley.jpg);*/
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(/Images/Portfolio/Lapland.jpg);
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
