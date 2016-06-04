@@ -385,11 +385,16 @@
     <Content Include="Images\Profile2.jpg" />
     <Content Include="Images\Profile\Brice-3.jpg" />
     <Content Include="Images\Profile\Brice-4.jpg" />
+    <Content Include="Images\Profile\Brice-less-smile-2.jpg" />
+    <Content Include="Images\Profile\Brice-less-smile.jpg" />
     <Content Include="Images\Profile\CV.jpg" />
+    <Content Include="Images\Profile\CV2.jpg" />
+    <Content Include="Images\Profile\CV3.jpg" />
     <Content Include="Images\Profile\Profile1.jpg" />
     <Content Include="Images\Profile\Profile2.jpg" />
     <Content Include="Images\Profile\Profile3.jpg" />
     <Content Include="Images\Profile\Profile4.jpg" />
+    <Content Include="Images\Profile\Profile5.jpg" />
     <Content Include="Images\SF_Skyline.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
