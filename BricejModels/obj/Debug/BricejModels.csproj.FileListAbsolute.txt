@@ -2,3 +2,8 @@ C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BricejModels\bin\
 C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BricejModels\bin\Debug\BricejModels.pdb
 C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.dll
 C:\Users\brice\documents\visual studio 2015\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.pdb
+C:\Users\Brice\Documents\Projects\BriceSite\BricejModels\bin\Debug\BricejModels.dll
+C:\Users\Brice\Documents\Projects\BriceSite\BricejModels\bin\Debug\BricejModels.pdb
+C:\Users\Brice\Documents\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.csprojResolveAssemblyReference.cache
+C:\Users\Brice\Documents\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.dll
+C:\Users\Brice\Documents\Projects\BriceSite\BricejModels\obj\Debug\BricejModels.pdb

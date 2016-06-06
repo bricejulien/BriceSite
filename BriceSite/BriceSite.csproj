@@ -502,7 +502,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\main\jquery.prettyPhoto.js" />
-    <Content Include="Uploads\CV_2016_Brice.pdf" />
+    <Content Include="Uploads\CV_Brice_Julien.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

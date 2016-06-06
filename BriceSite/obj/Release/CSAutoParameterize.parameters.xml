@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="BricejContext-Web.config Connection String" description="BricejContext Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:bricej.database.windows.net,1433;Data Source=bricej.database.windows.net;Initial Catalog=bricej;Persist Security Info=False;User ID=bricej;Password=new-york33;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\brice\\Documents\\Visual\ Studio\ 2015\\Projects\\BriceSite\\BriceSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BricejContext']/@connectionString" />
+  <parameter name="BricejContext-Web.config Connection String" description="BricejContext Chaîne de connexion utilisée dans web.config par l’application pour accéder à la base de données." defaultValue="Server=tcp:bricej.database.windows.net,1433;Data Source=bricej.database.windows.net;Initial Catalog=bricej;Persist Security Info=False;User ID=bricej;Password=new-york33;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Brice\\Documents\\Projects\\BriceSite\\BriceSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BricejContext']/@connectionString" />
   </parameter>
 </parameters>
