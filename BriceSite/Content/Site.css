@@ -983,14 +983,6 @@ a:hover, #header .copyright p a:hover, .rw-words-1 span, #contentContact .innerp
 }
 
 
-
-.qualities {
-    /*background-color: rgba(34,34,34,0.8);*/
-    background-color: rgba(0, 200, 170, 0.5);
-    text-align: center;
-}
-
-
 /* mobile menu */
 
 #wrappers .header-main {
@@ -2146,14 +2138,4 @@ hr.separate_port {
 
 .btn_home a:hover {
     background: rgba(255,255,255,0.4);
-}
-
-.btn_home a.btn_color {
-    margin-right: 20px;
-    background: rgba(0, 200, 170, 0.5);
-    /*border: 1px solid #00c8aa;*/
-}
-
-.btn_home a.btn_color:hover {
-    background: #00c8aa;
 }

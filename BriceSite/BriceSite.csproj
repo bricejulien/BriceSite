@@ -276,6 +276,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="CSS\animate.min.css" />
     <Content Include="CSS\colors\color_1.css" />
+    <Content Include="CSS\colors\color_0.css" />
     <Content Include="CSS\colors\color_19.css" />
     <Content Include="CSS\colors\color_18.css" />
     <Content Include="CSS\colors\color_17.css" />
@@ -503,6 +504,7 @@
     </Content>
     <Content Include="Scripts\main\jquery.prettyPhoto.js" />
     <Content Include="Uploads\CV_Brice_Julien.pdf" />
+    <Content Include="Uploads\CV_Brice.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
